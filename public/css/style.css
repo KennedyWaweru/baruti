@@ -1,0 +1,306 @@
+body{
+	background: #404040;
+	margin: 0;
+	padding: 0;
+	font-size: 62.5%; /* This ensures that 1rem = 10px */
+}
+.navbar .navbar-brand strong{
+	font-size: 1.5rem;
+	letter-spacing: .1em;
+	color: #dc2b51;
+	font-style: bold;
+	text-transform: uppercase;
+	/*font-family: 'Lato', sans-serif;*/
+}
+.navbar .navbar-toggler{
+	color: #fff;
+}
+.navbar .navbar-collapse .navbar-nav .nav-link {
+	margin: 2px;
+	color: whitesmoke;
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	font-weight: bold;
+	transition: all 1s ease;
+}
+
+.main .card{
+	font-size: 1rem;
+}
+.main .page-header{
+	margin: 0;
+	left: 0;
+	right: 0;
+	position: relative;
+	overflow: hidden;
+	height: 70vh;
+	display: flex;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.main .page-header #heading-text{
+	position: absolute;
+	padding-top: 20vh;
+}
+
+.main .page-header #heading-text h1{
+	font-size: 2.5rem;
+	text-shadow: 2px 2px 5px #ff1a1a;
+	letter-spacing: .1em;
+	color: #dc2b51;
+	font-style: bold;
+	text-transform: uppercase;
+	z-index: 2;
+}
+.main .page-header #heading-text #countdown{
+	color: whitesmoke;
+}
+.main .page-header #heading-image{
+	margin-left: 0;
+	margin-right: 0;
+	position: relative;
+	opacity: 0.45;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.main .page-header #heading-text #heading-cta{
+	position: relative;
+	margin-top: 50px;
+	z-index: 1;
+}
+
+.main .featured-products .card-img-top {
+	height: 50vh;
+}
+
+.main .featured-products #more-btn a{
+	Color: whitesmoke;
+	letter-spacing: .1em;
+	border-radius: 50px;
+	box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+	transition: all 0.4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+}
+
+.main .featured-products #more-btn i{
+	font-size: 1.4rem;
+	transition: all 0.4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+}
+
+.main .featured-products #more-btn:hover a{
+	background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f) !important;
+	text-shadow: 2px 2px 8px #ffffff;
+	transition: all 0.4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+}
+.main .featured-products #more-btn:hover i{
+	font-size: 2rem;
+	padding-bottom: 12px;
+	transform: translateY(15px);
+	transition: all 0.4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+}
+
+.main .featured-products .card .card-title, 
+.main .packages .card .card-title{
+	font-size: 1.5rem;
+}
+.main .featured-products .card .card-text, 
+.main .packages .card .card-text{
+	font-size: 1.1rem;
+}
+
+.main .details{
+	background-image: url('../images/stencil-original.jpg');
+	background-position: cover;
+	
+}
+.main .details p{
+	font-size: 1.1rem;
+}
+.footer-section .footer{
+	background-image: linear-gradient(to bottom, rgb(89, 89, 89), rgb(0, 0, 0));
+}
+
+.footer-section .footer p, 
+.footer-section .footer li{
+	font-size: 1.2rem;
+}
+
+.main form .form-label{
+	font-size: 1.2rem;
+}
+
+.main .show-product .card{
+	font-size: 1.2rem;
+}
+
+.main #thumbnail{
+			border: 2px solid black;
+			opacity: 0.7;
+			cursor: pointer;
+		}
+.main #thumbnail:hover{
+	opacity: 1;
+	border: 2px solid red;
+}
+.main #expandedImg{
+	height: 75vh;
+	margin-top: 20px;
+}
+.main .o-video{
+	height: 50vh;
+}
+
+.main #fab{
+	z-index: 10;
+	font-size: 3.5rem;
+	color: #dc2b51;
+	position: fixed;
+	bottom: 40px;
+	right: 20px;
+	padding: 15px;
+	background-color: rgba(0, 51, 102, .7);
+	border-radius: 50%;
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+}
+
+.main #fab span{
+	font-size: 1rem;
+
+}
+
+.main #fab:hover{
+	font-size: 3.7rem;
+	background-color: rgba(51, 153, 255, 1.0);
+	box-shadow: 0 0 4px 3px #e78267;
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+}
+
+.main #cartModal .modal-body table{
+	font-size: 1rem;
+}
+
+.main #cartModal .modal-body table #thumb-div{
+	display: none;
+}
+@media screen and (min-width: 768px) and (max-width: 992px){
+	.main #cartModal .modal-body table{
+		font-size: 1.2rem;
+	}
+	.main #cartModal .modal-body table #thumb-div{
+		display: block;
+	}
+	.main #cartModal .modal-body table .img-thumbnail{
+		/*display: block;*/
+		border: 1px solid blue;
+		height: 100%;
+		width: 100%;
+	}
+}
+@media screen and (min-width: 993px){
+	.main #cartModal .modal-body table{
+		font-size: 1.2rem;
+	}
+	.main #cartModal .modal-body table #thumb-div{
+		display: block;
+	}
+	.main #cartModal .modal-body table .img-thumbnail{
+		/*display: block;*/
+		border: 1px solid blue;
+		height: 75px;
+		width: 75px;
+	}
+}
+.main #cartModal .modal-body table .my-title{
+	float: left;
+}
+.main #cartModal .modal-body table #rem{
+	text-decoration: none;
+	color: black;
+}
+
+@media screen and (max-width: 600px){
+	.main #cartModal .modal-body table #quantity{
+		width: 70px !important;
+	}
+}
+
+/* Create order page */
+.cart-summary table{
+	font-size: 1.2rem;
+}
+.tl-container .timeline{
+	counter-reset: test 0;
+	position: relative;
+}
+
+.tl-container .timeline li{
+	list-style: none;
+	float: left;
+	width: 33%;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.tl-container .timeline li a{
+	text-decoration: none;
+}
+
+.tl-container ul::nth-child(1) {
+	color: #4caf50;	
+}
+.tl-container .timeline li::before{
+	counter-increment: test;
+	content: counter(test);
+	width: 60px;
+	height: 50px;
+	border: 3px solid #4caf50;
+	border-radius: 50%;
+	display: block;
+	text-align: center;
+	line-height: 50px;
+	margin: 0 auto 10px auto;
+	background: #fff;
+	color: #000;
+	transition: all ease-in-out .3s;
+	cursor: pointer;
+}
+.tl-container .timeline li::after{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	color: #000;
+	background-color: grey;
+	top: 25%;
+	left: -60px;
+	z-index: 1;
+	transition: all ease-in-out .3s;
+}
+.tl-container .timeline li:first-child::after{
+	content: none;
+}
+.tl-container .timeline li.active-tl{
+	color: #555555;
+} 
+.tl-container .timeline li.active-tl:before{
+	background: #4caf50;
+	color: #F1F1F1;
+}
+.tl-container .timeline li.active-tl + li:after{
+	background: #4caf50;
+}
+
+.table-delivery-info{
+	font-size: 1.2rem;
+}
+/* End of create order page */
