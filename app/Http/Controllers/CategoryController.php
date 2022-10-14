@@ -90,7 +90,7 @@ class CategoryController extends Controller
             Storage::disk('s3')->delete($img_name);
 
             $img_file = $request->file('image');
-            $img_name = time().$name;
+            $img_name = time().'_'.$request->input('name');
             $filename = 'category_images/'.$img_name;
 
             Storage::disk('s3')->put($filename, file_get_contents($img_file));
