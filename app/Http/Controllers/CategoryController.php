@@ -92,7 +92,7 @@ class CategoryController extends Controller
 
             $img_file = $request->file('image');
             $name = $request->input('name');
-            $img_ext = $img_file.getClientOriginalExtension();
+            $img_ext = $img_file->getClientOriginalExtension();
             $img_name = time().'_'.$name.$img_ext;
             $filename = 'category_images/'.$img_name;
 
