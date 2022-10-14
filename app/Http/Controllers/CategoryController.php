@@ -30,14 +30,22 @@ class CategoryController extends Controller
         $description = $request->input('description');
         if($request->hasFile('image')){
             //$img_prefix = "category_pic_".$name;
-            $img = $request->file('image')->store('public/category_images');
-            $img = Str::replaceFirst('public','storage',$img);
+
+            /* Save image file in local storage */
+            //$img = $request->file('image')->store('public/category_images');
+
+            $img_file = $request->file('image');
+            $name = time().$img_file->getClientOriginalName();
+            $filename = 'uploads/'.$name;
+
+            Storage::disk('s3')->put($filename, file_get_contents($img_file));
+            //$img = Str::replaceFirst('public','storage',$img);
         }
 
         $category = new Category;
         $category->name = $name;
         $category->description = $description;
-        $category->image = $img;
+        $category->image = $filename;
         if ($category->save()){
             return redirect()->route('category')->with('success','Category Created Successfully');
         }
