@@ -36,7 +36,7 @@ class CategoryController extends Controller
 
             $img_file = $request->file('image');
             $img_name = time().$name;
-            $filename = 'uploads/'.$img_name;
+            $filename = 'category_images/'.$img_name;
 
             Storage::disk('s3')->put($filename, file_get_contents($img_file));
             //$img = Str::replaceFirst('public','storage',$img);
