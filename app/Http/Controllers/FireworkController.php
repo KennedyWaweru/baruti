@@ -291,7 +291,7 @@ class FireworkController extends Controller
                 //$current_folder = 'uploads/'.$firework->getOriginal('slug');
                 $new_folder_name = 'uploads/'.$firework->slug;
                 $folder_path = 'uploads/'.$folder_name;
-                Storage::disk('s3')->move($folder_path, $current_folder);
+                Storage::disk('s3')->move($folder_path, $new_folder_name);
             }
         }
        
