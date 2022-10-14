@@ -50,3 +50,4 @@ Route::post('categories','CategoryController@store')->name('category.store');
 Route::get('categories/{category:slug}',[CategoryController::class, 'show'])->name('category.show');
 Route::get('categories/{category:slug}/edit',[CategoryController::class, 'edit'])->name('category.edit');
 Route::put('categories/{category:slug}/edit',[CategoryController::class,'update'])->name('category.update');
+Route::delete('categories/{category:slug}',[CategoryController::class, 'destroy'])->name('category.destroy');

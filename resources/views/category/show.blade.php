@@ -44,6 +44,44 @@
 					</div>
 				</div>
 			</div>
+
+			
+			@auth
+				@can('admin')
+				<!-- Edit and Delete Button for admin -->
+				<a role="button" href="{{route('category.edit', $category)}}" class="btn btn-primary float-start mb-3">Edit</a>
+				<button role="button" class="btn btn-danger float-end mb-3" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+				@endcan
+				@endauth
+
+				<!-- Modal to ensure the user wants to delete the product -->
+				<!-- Modal -->
+				<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title text-center" id="deleteModalLabel">Delete {{$category->name}}</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="alert alert-danger fs-6" role="alert">
+									This action will delete <strong>{{$category->name}}</strong> permanently.
+									<br class="my-2">
+									Click Delete to remove the record.
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+								{{Form::open(['action'=>['CategoryController@destroy',$category], 'method'=>'POST'])}}
+								@method('DELETE')
+								{!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+								{{Form::close()}}
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End of edit and Delete Button section -->
 			@endisset
 		</div>
 		<hr class="my-3 fs-3 text-info">
