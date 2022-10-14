@@ -228,7 +228,8 @@ class FireworkController extends Controller
         $colors = $request->input('colors');
         $firework->effect_colors = json_encode($colors);
         // Logic for saving the images to filesystem
-        $folder_name = Str::of($request->input('name'))->slug();
+        
+        $folder_name = $firework->getOriginal('slug');
 
         // Local File system
         // Storage::makeDirectory('public/uploads/'.$folder_name);
@@ -285,10 +286,12 @@ class FireworkController extends Controller
 
             // check if name of the product changed so as to move the directory
             $has_name_changed = $firework->isDirty('name');
+
             if($has_name_changed){
-                $current_folder = 'uploads/'.Str::of($firework->name)->slug();
+                //$current_folder = 'uploads/'.$firework->getOriginal('slug');
+                $new_folder_name = 'uploads/'.$firework->slug;
                 $folder_path = 'uploads/'.$folder_name;
-                Storage::disk('s3')->move($current_folder, $folder_path);
+                Storage::disk('s3')->move($folder_path, $current_folder);
             }
         }
        
