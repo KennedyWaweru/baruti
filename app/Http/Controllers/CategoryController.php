@@ -7,6 +7,7 @@ use App\Category;
 use Illuminate\Support\Facades\Storage;
 use App\Firework;
 use Illuminate\Support\Str;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class CategoryController extends Controller
 {
