@@ -235,13 +235,7 @@ class FireworkController extends Controller
         //$folder_path = 'uploads/'.$folder_name;
         //Storage::disk('s3')->makeDirectory($folder_path);
 
-        // check if name of the product changed so as to move the directory
-        $has_name_changed = $firework->isDirty('name');
-        if($has_name_changed){
-            $current_folder = 'uploads/'.Str::of($firework->name)->slug();
-            $folder_path = 'uploads/'.$folder_name;
-            Storage::disk('s3')->move($current_folder, $folder_path);
-        }
+        
         
         if($request->hasFile('dp_image')){
             $image = $request->file('dp_image');
@@ -289,7 +283,13 @@ class FireworkController extends Controller
             #var_dump(json_encode($image_names));
             $firework->images = json_encode($image_names);
 
-
+            // check if name of the product changed so as to move the directory
+            $has_name_changed = $firework->isDirty('name');
+            if($has_name_changed){
+                $current_folder = 'uploads/'.Str::of($firework->name)->slug();
+                $folder_path = 'uploads/'.$folder_name;
+                Storage::disk('s3')->move($current_folder, $folder_path);
+            }
         }
        
         if ($firework->save()){
