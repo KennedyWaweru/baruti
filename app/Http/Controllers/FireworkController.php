@@ -246,7 +246,7 @@ class FireworkController extends Controller
             $current_image = $firework->image_url;
             // Update files on s3 bucket
             $image = $request->file('dp_image');
-            $path = $folder_path.'/'.time()."_".$folder_name.'.'.$image->getClientOriginalExtension();
+            $path = 'uploads/'.$folder_name.'/'.time()."_".$folder_name.'.'.$image->getClientOriginalExtension();
             $img = Image::make($image->getRealPath())->resize(300, 300);
 
             Storage::disk('s3')->delete($current_image);
