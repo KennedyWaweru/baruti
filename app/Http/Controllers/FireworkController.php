@@ -123,9 +123,19 @@ class FireworkController extends Controller
        
         if($request->hasFile('images')){
             foreach($request->file('images') as $_img){
+
+                /*
+                Local Storage
                 $name = $_img->getClientOriginalName();
                 $path = 'storage/uploads/'.$folder_name.'/'.time()."_".$name;
                 Image::make($_img->getRealPath())->resize(300,300)->save(public_path($path));
+
+                */
+
+                // s3 bucket storage
+                $path = 'uploads/'.$folder_name.'/'.time().'_'.$folder_name.'.'.$_img->getClientOriginalExtension();
+                $image = Image::make($_img->getRealPath())->resize(300,300)->stream();
+                Storage::disk('s3')->put($path, $image);
                 $image_names[] = $path;
             }
             #var_dump(json_encode($image_names));
@@ -219,11 +229,27 @@ class FireworkController extends Controller
         $firework->effect_colors = json_encode($colors);
         // Logic for saving the images to filesystem
         $folder_name = Str::of($request->input('name'))->slug();
-        Storage::makeDirectory('public/uploads/'.$folder_name);
+
+        // Local File system
+        // Storage::makeDirectory('public/uploads/'.$folder_name);
+        $folder_path = 'uploads/'.$folder_name;
+        Storage::disk('s3')->makeDirectory($folder_path);
+        
         if($request->hasFile('dp_image')){
             $image = $request->file('dp_image');
+            /*
             $path = 'storage/uploads/'.$folder_name.'/'.time()."_".$image->getClientOriginalName();
             $img = Image::make($image->getRealPath())->resize(300,300)->save(public_path($path));
+            */
+            $current_image = $firework->image_url;
+            // Update files on s3 bucket
+            $image = $request->file('dp_image');
+            $path = $folder_path.'/'.time()."_".$folder_name.'.'.$image->getClientOriginalExtension();
+            $img = Image::make($image->getRealPath())->resize(300, 300);
+
+            Storage::disk('s3')->delete($current_image);
+            Storage::disk('s3')->put($path, $img->stream());
+
             $firework->image_url = $path;
         }else{
             $firework->image_url = $firework->getOriginal('image_url');
@@ -231,11 +257,25 @@ class FireworkController extends Controller
         
        
         if($request->hasFile('images')){
+
+            // Delete current files in s3 bucket
+            foreach($firework->images as $img_file){
+                Storage::disk('s3')->delete($img_file);
+            }
             foreach($request->file('images') as $_img){
+                /* 
+                Local file system
                 $name = $_img->getClientOriginalName();
                 $path = 'storage/uploads/'.$folder_name.'/'.time()."_".$name;
                 Image::make($_img->getRealPath())->resize(300,300)->save(public_path($path));
                 #$img_path = $img->move('storage/uploads/'.$folder_name, $name);
+                */
+
+                // s3 bucket storage
+                $path = $folder_path.'/'.time().'_'.$folder_name.'.'.$_img->getClientOriginalExtension();
+                $image = Image::make($_img->getRealPath())->resize(300,300)->stream();
+                Storage::disk('s3')->put($path, $image);
+
                 $image_names[] = $path;
             }
             #var_dump(json_encode($image_names));
