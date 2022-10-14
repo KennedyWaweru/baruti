@@ -274,7 +274,7 @@ class FireworkController extends Controller
                 */
 
                 // s3 bucket storage
-                $path = $folder_path.'/'.time().'_'.$folder_name.'.'.$_img->getClientOriginalExtension();
+                $path = $'uploads/'$folder_name.'/'.time().'_'.$folder_name.'.'.$_img->getClientOriginalExtension();
                 $image = Image::make($_img->getRealPath())->resize(300,300)->stream();
                 Storage::disk('s3')->put($path, $image);
 
