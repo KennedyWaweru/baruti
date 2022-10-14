@@ -87,6 +87,33 @@ class CategoryController extends Controller
 
     }
 
+    public function destroy(Category $category){
+        // delete the product and related files
+        //dd($category);
+        /*
+
+        Delete from Local storage
+
+        $category_name = $category->name;
+        $category_dir = 'public/category_images/'.$category->slug;
+        if(Storage::deleteDirectory($category_dir) && $category->delete()){
+            return redirect()->route('category.index')->with('success',$category_name.' Deleted');
+        }else{
+            return redirect()->back()->with('error','Could not delete '.$category_name);
+        }
+
+        */
+
+        // Delete from s3 bucket 
+        $category_name = $category->name;
+        $category_dir = 'category_images/'.$category->slug;
+        if(Storage::deleteDirectory($category_dir) && $category->delete()){
+            return redirect()->route('category.index')->with('success ',$category_name.' Deleted');
+        } else {
+            return redirect()->back()->with('error', 'Could not delete '.$category_name);
+        }
+    }
+
     public function checkSlug(Request $req){
         $slug = SlugService::createSlug(Category::class, 'slug', $req->name);
         return response()->json(['slug' => $slug]);
