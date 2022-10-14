@@ -17,7 +17,7 @@
 
 			<div class="form-group m-1">
 				{{Form::label('image', 'Image',['class'=>'form-label'])}}
-				{{Form::file('image', ['class'=>'form-control form-control-sm', 'type'=>'file','required'])}}
+				{{Form::file('image', ['class'=>'form-control form-control-sm', 'type'=>'file'])}}
 			</div>
 
 			{!! Form::submit('Submit',['class'=>'form-control btn-outline-success my-3']) !!}
