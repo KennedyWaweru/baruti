@@ -9,6 +9,13 @@
 					{{Form::label('name', 'Name',['class'=>'form-label'])}}
 					{{Form::text('name', '',['placeholder'=>"Name",'class'=>'form-control'])}}
 				</div>
+
+				<div class="form-group m-1">
+					{{Form::label('slug', 'Slug',['class'=>'form-label'])}}
+					{{Form::text('slug', '',['placeholder'=>"slug",'id'=>'slug','class'=>'form-control','readonly'])}}
+				</div>
+
+
 				<div class="form-group m-1">
 					{{Form::label('description', 'Description',['class'=>'form-label'])}}
 					{{Form::textarea('description', '',['placeholder'=>"DESCRIPTION",'id'=>'ckeditor','class'=>'form-control'])}}
