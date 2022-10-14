@@ -232,8 +232,16 @@ class FireworkController extends Controller
 
         // Local File system
         // Storage::makeDirectory('public/uploads/'.$folder_name);
-        $folder_path = 'uploads/'.$folder_name;
-        Storage::disk('s3')->makeDirectory($folder_path);
+        //$folder_path = 'uploads/'.$folder_name;
+        //Storage::disk('s3')->makeDirectory($folder_path);
+
+        // check if name of the product changed so as to move the directory
+        $has_name_changed = $firework->isDirty('name');
+        if($has_name_changed){
+            $current_folder = 'uploads/'.Str::of($firework->'name')->slug();
+            $folder_path = 'uploads/'.$folder_name;
+            Storage::disk('s3')->move($current_folder, $folder_path);
+        }
         
         if($request->hasFile('dp_image')){
             $image = $request->file('dp_image');
