@@ -286,13 +286,14 @@ class FireworkController extends Controller
 
             // check if name of the product changed so as to move the directory
             $has_name_changed = $firework->isDirty('name');
-
+            /*
             if($has_name_changed){
                 //$current_folder = 'uploads/'.$firework->getOriginal('slug');
                 $new_folder_name = 'uploads/'.$firework->slug;
                 $folder_path = 'uploads/'.$folder_name;
                 Storage::disk('s3')->move($folder_path, $new_folder_name);
             }
+            */
         }
        
         if ($firework->save()){
