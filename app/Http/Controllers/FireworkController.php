@@ -103,10 +103,22 @@ class FireworkController extends Controller
         $firework->effect_colors = json_encode($colors);
         // Logic for saving the images to filesystem
         $folder_name = Str::of($request->input('name'))->slug();
+        /*
+        // Local Storage
         Storage::makeDirectory('public/uploads/'.$folder_name);
         $image = $request->file('dp_image');
         $path = 'storage/uploads/'.$folder_name.'/'.time()."_".$image->getClientOriginalName();
         $img = Image::make($image->getRealPath())->resize(300,300)->save(public_path($path));
+        */
+
+        // s3 bucket 
+        $folder_path = 'uploads/'.$folder_name;
+        Storage::disk('s3')->makeDirectory($folder_path);
+        $image = $request->file('dp_image');
+        $path = $folder_path.'/'.time()."_".$folder_name.'.'.$image->getClientOriginalExtension();
+        $img = Image::make($image->getRealPath())->resize(300, 300);
+        Storage::disk('s3')->put($path, $img->stream());
+        
         $firework->image_url = $path;
        
         if($request->hasFile('images')){
@@ -249,12 +261,28 @@ class FireworkController extends Controller
     {
         // delete the product and related files
         //dd($firework);
+
+        /* 
+
+        Delete product and resources from local storage
+
         $fwork_name = $firework->name;
         $fwork_dir = 'public/uploads/'.$firework->slug;
         if(Storage::deleteDirectory($fwork_dir) && $firework->delete()){
             return redirect()->route('fireworks.index')->with('success',$fwork_name.' Deleted');
         }else{
             return redirect()->back()->with('error','Could not delete '.$fwork_name);
+        }
+        */
+
+        // Delete product and resources from s3 bucket
+        $fwork_name = $firework->name;
+        $fwork_slug = $firework->slug;
+        $fwork_dir = 'uploads/'.$fwork_slug;
+        if(Storage::disk('s3')->deleteDirectory($fwork_dir) && $firework->delete()){
+            return redirect()->route('fireworks.index')->with('success',$fwork_name." Deleted");
+        } else {
+            return redirect()->back()->with('error', 'Could not delete '.$fwork_name);
         }
     }
 
