@@ -26,3 +26,15 @@
 	</div>
 	
 @endsection
+
+@section('bottom_scripts')
+<script>
+	$('#name').change(function(e){
+		$.get('{{route('category.checkSlug')}}',
+			{ 'name': $(this).val() },
+			function(data){
+				$('#slug').val(data.slug);
+			});
+	});
+</script>
+@endsection

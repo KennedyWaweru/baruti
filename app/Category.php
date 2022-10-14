@@ -8,6 +8,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Category extends Model
 {
+    use Sluggable;
     //
     public $timestamps = false;
     protected $fillable = ['name'];

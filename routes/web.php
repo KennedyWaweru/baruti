@@ -43,6 +43,7 @@ Route::get('payment',function(){
   return redirect()->back();
 });
 Route::post('payment','OrderController@paymentOrder')->name('payment');
+Route::get('categories/checkSlug', 'CategoryController@checkSlug')->name('category.checkSlug');
 Route::get('categories','CategoryController@index')->name('category');
 Route::get('categories/create','CategoryController@create')->name('category.create');
 Route::post('categories','CategoryController@store')->name('category.store');
