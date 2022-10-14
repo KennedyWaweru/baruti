@@ -11,7 +11,7 @@
 			{{Form::text('id',$firework->id,['hidden'])}}
 			<div class="form-group mb-3">
 				{{Form::label('name', 'Product Name',['class'=>'form-label'])}}
-				{{Form::text('name', $firework->name,['placeholder'=>"Product Name",'id'=>'name','class'=>'form-control','required'])}}
+				{{Form::text('name', $firework->name,['placeholder'=>"Product Name",'id'=>'name','class'=>'form-control','required','readonly'])}}
 			</div>
 
 			<div class="form-group mb-3">
