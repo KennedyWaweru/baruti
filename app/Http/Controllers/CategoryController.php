@@ -35,7 +35,7 @@ class CategoryController extends Controller
             //$img = $request->file('image')->store('public/category_images');
 
             $img_file = $request->file('image');
-            $img_ext = $img_file.getClientOriginalExtension();
+            $img_ext = $img_file->getClientOriginalExtension();
             $img_name = time().'_'.Str::slug($name).'.'.$img_ext;
             $filename = 'category_images/'.$img_name;
 
