@@ -7,7 +7,7 @@
 				{!! Form::open(['route'=>'category.store','method'=>'POST','files'=>true]) !!}
 				<div class="form-group m-1">
 					{{Form::label('name', 'Name',['class'=>'form-label'])}}
-					{{Form::text('name', '',['placeholder'=>"Name",'class'=>'form-control'])}}
+					{{Form::text('name', '',['placeholder'=>"Name",'id'=>'name','class'=>'form-control'])}}
 				</div>
 
 				<div class="form-group m-1">
