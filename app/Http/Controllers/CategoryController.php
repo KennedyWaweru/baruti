@@ -75,11 +75,27 @@ class CategoryController extends Controller
         if ($request->hasFile('image')){
 
             $current_image = $category->image;
+
+            /*
+            Update category image from local storage
             // delete current image
             if($current_image){Storage::delete($current_image);}
             $img = $request->file('image')->store('public/category_images');
             $img = Str::replaceFirst('public','storage',$img);
-            $category -> image = $img;
+
+            */
+
+            // Update category image on s3 storage
+            $img_name = 'category_images/'.$current_image;
+            Storage::disk('s3')->delete($img_name);
+
+            $img_file = $request->file('image');
+            $img_name = time().$name;
+            $filename = 'category_images/'.$img_name;
+
+            Storage::disk('s3')->put($filename, file_get_contents($img_file));
+            $category -> image = $filename;
+
         }
         $category->save();
         return redirect() -> route('category')->with('success','Updated Successfully');
