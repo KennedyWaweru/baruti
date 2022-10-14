@@ -128,7 +128,7 @@ class CategoryController extends Controller
         //$category_dir = 'category_images/'.$category->slug;
         //$img_path = 'category_images/'.$category->image;
         if(Storage::disk('s3')->delete($category->image) && $category->delete()){
-            return redirect()->route('category.index')->with('success ',$category_name.' Deleted');
+            return redirect()->route('category')->with('success ',$category_name.' Deleted');
         } else {
             return redirect()->back()->with('error', 'Could not delete '.$category_name);
         }
