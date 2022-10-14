@@ -86,8 +86,8 @@ class CategoryController extends Controller
             */
 
             // Update category image on s3 storage
-            $img_name = 'category_images/'.$current_image;
-            Storage::disk('s3')->delete($img_name);
+            // $img_name = 'category_images/'.$current_image;
+            Storage::disk('s3')->delete($current_image);
 
             $img_file = $request->file('image');
             $img_name = time().'_'.$request->input('name');
@@ -122,8 +122,9 @@ class CategoryController extends Controller
 
         // Delete from s3 bucket 
         $category_name = $category->name;
-        $category_dir = 'category_images/'.$category->slug;
-        if(Storage::deleteDirectory($category_dir) && $category->delete()){
+        //$category_dir = 'category_images/'.$category->slug;
+        $img_path = 'category_images/'.$category->image;
+        if(Storage::disk('s3')->delete($img_path) && $category->delete()){
             return redirect()->route('category.index')->with('success ',$category_name.' Deleted');
         } else {
             return redirect()->back()->with('error', 'Could not delete '.$category_name);
