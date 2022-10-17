@@ -39,27 +39,32 @@
 	<div class="container-md show-product">
 		<div class="row bg-light rounded-3">
 			<div class="col-md-8 col-sm-12">
-				{{-- @isset($firework->images)
+				@isset($firework->images)
 				<div class="row">
 					<div class="col-3">
 						@php
 							$images_json = json_decode($firework->images);
 						@endphp
-						<img src="{{asset($firework->image_url)}}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail">
+						{{--<img src="{{asset($firework->image_url)}}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail"> --}}
+						<img src="{{ env('AWS_BUCKET_URL').$firework->image_url }}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail">
+						
 						@foreach($images_json as $img)
-						<img src="{{asset($img)}}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail">
+						{{-- <img src="{{asset($img)}}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail"> --}}
+						<img src="{{env('AWS_BUCKET_URL').$img}}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail">
+						
 						@endforeach
 					</div>
 					<div class="col-9">
-						<img src="{{asset($firework->image_url)}}" alt="{{$firework->name}}" class="img-fluid" id="expandedImg">
+						{{-- <img src="{{asset($firework->image_url)}}" alt="{{$firework->name}}" class="img-fluid" id="expandedImg"> --}}
+						<img src="{{env('AWS_BUCKET_URL').$firework->image_url}}" alt="{{$firework->name}}" class="img-fluid" id="expandedImg">
 					</div>
 				</div>
 				@else
 					<img src="{{asset('images/ball-bullet-rocket.jpg')}}" alt="" class="img-fluid">
 				@endisset
-				--}}
+				
 				{{--<img src="{{asset('images/ball-bullet-rocket.jpg')}}" alt="" class="img-fluid">--}}
-				<img src="{{env('AWS_BUCKET_URL').'Mars-attack.jpeg'}}" alt="" class="img-fluid">
+				{{-- <img src="{{env('AWS_BUCKET_URL').'Mars-attack.jpeg'}}" alt="" class="img-fluid"> --}}
 
 				
 			</div>
