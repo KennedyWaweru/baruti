@@ -29,7 +29,8 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-6" id="thumb-div">
-                      <img src="{{asset($product_in_cart['image_url'])}}" alt="" class="img-fluid img-thumbnail">
+                      {{-- <img src="{{asset($product_in_cart['image_url'])}}" alt="" class="img-fluid img-thumbnail"> --}}
+                      <img src="{{env('AWS_BUCKET_URL').$product_in_cart['image_url']}}" alt="{{$product_in_cart['name']}}" class="img-fluid img-thumbnail">
                     </div>
                     <div class="col-6">
                       <h6 class="my-title"><strong>{{$product_in_cart['name']}}</strong></h6>
