@@ -86,8 +86,8 @@ class OrderPayment extends Component
 
     public function checkTransactionStatus($checkout_request_id){
         $query_url =  "https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query";
-        $shortcode = env(MPESA_SHORTCODE);
-        $passkey = env(MPESA_PASSKEY);
+        $shortcode = env('MPESA_SHORTCODE');
+        $passkey = env('MPESA_PASSKEY');
         $timestamp = strftime("%Y%m%d%H%M%S",time());
         $raw_password = $shortcode.$passkey.$timestamp;
         $enc_pwd = base64_encode($raw_password);
