@@ -5,9 +5,9 @@
             <div class="col-4">
                 <div class="container">
                     <div class="row g-0">
-                        @foreach($package_images as $package_image)
-                            {!!env('AWS_BUCKET_URL').$package_image!!}
-                        @endforeach
+                        {{-- @foreach($package_images as $package_image) --}}
+                            {!!env('AWS_BUCKET_URL').$package_images!!}
+                        {{-- @endforeach --}}
                     </div>
                 </div>
                 {{-- <img src="{{asset('images/crown_rockets_assortment.jpg')}}" alt="" class="img-fluid rounded-start"> --}}
