@@ -1,6 +1,6 @@
 <div class="card m-2 rounded-3 border-info">
-    {{-- <img src="{{asset('images/ball-bullet-rocket.jpg')}}" class="card-img-top img-fluid" alt="..."> --}}
-    <img src="{{asset($image_url)}}" class="card-img-top img-fluid" alt="...">
+    {{--<img src="{{asset($image_url)}}" class="card-img-top img-fluid" alt="..."> --}}
+    <img src="{{env('AWS_BUCKET_URL').$image_url}}" class="card-img-top img-fluid" alt="{{$name}}">
     <div class="card-body">
         <div class="row">
             <div class="col-8">
