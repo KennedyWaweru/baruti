@@ -6,7 +6,7 @@
                 <div class="container">
                     <div class="row g-0">
                         {{-- @foreach($package_images as $package_image) --}}
-                            {!!$package_images!!}
+                            {!!env('AWS_BUCKET_URL').$package_images!!}
                         {{-- @endforeach --}}
                     </div>
                 </div>
