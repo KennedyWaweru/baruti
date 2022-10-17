@@ -25,7 +25,8 @@
 				@foreach($categories as $category)
 				<div class="col-sm-6 my-2 h-100">
 					<div class="card bg-dark bordered border-primary text-dark">
-						<img src="{{$category->image}}" class="card-img img-fluid" alt="{{$category->name}}" style="height:300px;">
+						{{-- <img src="{{$category->image}}" class="card-img img-fluid" alt="{{$category->name}}" style="height:300px;"> --}}
+						<img src="{{env('AWS_BUCKET_URL').$category->image}}" class="card-img img-fluid" alt="{{$category->name}}" style="height:300px;">
 						<div class="card-img-overlay">
 							<div class="border p-2 bg-info rounded-3">
 								<h5 class="card-title">
