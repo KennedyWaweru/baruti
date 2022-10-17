@@ -58,7 +58,8 @@
 					<img src="{{asset('images/ball-bullet-rocket.jpg')}}" alt="" class="img-fluid">
 				@endisset
 				--}}
-				<img src="{{asset('images/ball-bullet-rocket.jpg')}}" alt="" class="img-fluid">
+				{{--<img src="{{asset('images/ball-bullet-rocket.jpg')}}" alt="" class="img-fluid">--}}
+				<img src="{{env(AWS_BUCKET_URL).'/Mars-attack.jpeg'}}" alt="" class="img-fluid">
 
 				
 			</div>
