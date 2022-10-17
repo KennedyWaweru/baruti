@@ -34,7 +34,8 @@
 			<div class="card mb-3">
 				<div class="row g-0">
 					<div class="col-md-4">
-						<img src="{{asset($category->image)}}" class="img-fluid rounded-start h-100 d-inline-block" alt="{{$category->name}}">
+						{{-- <img src="{{asset($category->image)}}" class="img-fluid rounded-start h-100 d-inline-block" alt="{{$category->name}}"> --}}
+						<img src="{{env('AWS_BUCKET_URL').$category->image}}" class="img-fluid rounded-start h-100 d-inline-block" alt="{{$category->name}}">
 					</div>
 					<div class="col-md-8">
 						<div class="card-body">
