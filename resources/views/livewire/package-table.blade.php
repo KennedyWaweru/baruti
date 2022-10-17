@@ -19,7 +19,8 @@
                 foreach($package_products as $product){
                     $products_array[]="<span class='badge bg-light text-dark'>$product->name</span>";
                     $products_stock[]=$product->stock;
-                    $product_image="<div class=\"col-sm-6\">\n<img src=\"$_ENV['AWS_BUCKET_URL'].$product->image_url\" alt=\"\" class=\"img-fluid rounded-start\">\n\t</div>";
+                    $aws_url = $_ENV['AWS_BUCKET_URL'].$product->image_url;
+                    $product_image="<div class=\"col-sm-6\">\n<img src=\"$aws_url\" alt=\"\" class=\"img-fluid rounded-start\">\n\t</div>";
                     $package_images[]=$product_image;
                 }
                 $package_products_html = implode(",",$products_array);
