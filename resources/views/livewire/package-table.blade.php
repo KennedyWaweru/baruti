@@ -1,6 +1,5 @@
 <div>
     @isset($package)
-    my_package
         <x-package-component>
             <x-slot name="package_name">{{Str::title($package->name)}}</x-slot>
             <x-slot name="package_price">{{number_format($package->price)}}</x-slot>
@@ -20,7 +19,7 @@
                 foreach($package_products as $product){
                     $products_array[]="<span class='badge bg-light text-dark'>$product->name</span>";
                     $products_stock[]=$product->stock;
-                    $product_image="<div class=\"col-sm-6\">\n<img src=\"/$product->image_url\" alt=\"\" class=\"img-fluid rounded-start\">\n\t</div>";
+                    $product_image="<div class=\"col-sm-6\">\n<img src=\"/env('AWS_BUCKET_URL').$product->image_url\" alt=\"\" class=\"img-fluid rounded-start\">\n\t</div>";
                     $package_images[]=$product_image;
                 }
                 $package_products_html = implode(",",$products_array);

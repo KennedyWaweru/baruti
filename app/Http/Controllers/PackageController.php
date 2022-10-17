@@ -112,7 +112,7 @@ class PackageController extends Controller
     public function show(Package $package)
     {
         //
-        dd($package);
+        //dd($package);
         return view('packages.show',['package'=>$package]);
     }
 
