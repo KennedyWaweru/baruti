@@ -39,7 +39,7 @@
 	<div class="container-md show-product">
 		<div class="row bg-light rounded-3">
 			<div class="col-md-8 col-sm-12">
-				@isset($firework->images)
+				{{-- @isset($firework->images)
 				<div class="row">
 					<div class="col-3">
 						@php
@@ -57,6 +57,9 @@
 				@else
 					<img src="{{asset('images/ball-bullet-rocket.jpg')}}" alt="" class="img-fluid">
 				@endisset
+				--}}
+				<img src="{{asset('images/ball-bullet-rocket.jpg')}}" alt="" class="img-fluid">
+
 				
 			</div>
 			<div class="col-md-4 col-sm-12">
