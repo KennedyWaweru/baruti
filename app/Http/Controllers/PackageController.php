@@ -76,7 +76,7 @@ class PackageController extends Controller
         $products_stock[] = $product->stock;
     }
     if(((int)$package_price >= (int)$original_package_price)){
-        dd('Not cool');
+        //dd('Not cool');
         return redirect()->back()->with('error','Price cannot be higher than original price')->withInput();
     }
     $package_stock = min($products_stock);

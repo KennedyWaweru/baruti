@@ -38,6 +38,7 @@ class OrderPayment extends Component
         $msisdn_mobile_num = substr($msisdn_mobile_num,1);
         $payment_phone = '254'.$msisdn_mobile_num;
         $phone_num = $payment_phone;
+        // TODO: move callback url to proper server
         $callback_url = "https://dasclab.uonbi.ac.ke/analytics/api/process_query";
         
         $shortcode = env('MPESA_SHORTCODE');
@@ -62,7 +63,7 @@ class OrderPayment extends Component
           "PhoneNumber"=>$phone_num,    
           "CallBackURL"=>$callback_url,    
           "AccountReference"=>"KenWebShop",    
-          "TransactionDesc"=>"Ken Using php HTTP GUZZLE"
+          "TransactionDesc"=>"Using php HTTP GUZZLE"
       );
 
         $res = Http::withHeaders($header)->post($stk_push_url, $req_body);
@@ -85,8 +86,8 @@ class OrderPayment extends Component
 
     public function checkTransactionStatus($checkout_request_id){
         $query_url =  "https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query";
-        $shortcode = 174379;
-        $passkey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
+        $shortcode = env(MPESA_SHORTCODE);
+        $passkey = env(MPESA_PASSKEY);
         $timestamp = strftime("%Y%m%d%H%M%S",time());
         $raw_password = $shortcode.$passkey.$timestamp;
         $enc_pwd = base64_encode($raw_password);
