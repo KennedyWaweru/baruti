@@ -36,3 +36,18 @@
 	</div>
 </div>
 @endsection
+
+@section('bottom_scripts')
+<script type="text/javascript"
+        src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&libraries=places" ></script>
+<script>
+
+<script>
+        google.maps.event.addDomListener(window, 'load', initialize);
+  
+        function initialize() {
+            var input = document.getElementById('autocomplete');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+</script>
+@endsection

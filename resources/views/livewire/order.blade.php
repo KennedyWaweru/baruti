@@ -39,9 +39,9 @@
     <div class="col-12">
         <label for="location" class="form-label">Location Description</label>
         @empty(old('location'))
-        <textarea required class="form-control" name="location" placeholder="Enter your correct location details. This includes Location, buildings and offices where you would like the delivery to be made">{{Cookie::get('order_location')}}</textarea>
+        <textarea required id="autocomplete" class="form-control" name="location" placeholder="Enter your correct location details. This includes Location, buildings and offices where you would like the delivery to be made">{{Cookie::get('order_location')}}</textarea>
         @else
-        <textarea required class="form-control" name="location" placeholder="Enter your correct location details. This includes Location, buildings and offices where you would like the delivery to be made">{{old('location')}}</textarea>
+        <textarea required id="autocomplete" class="form-control" name="location" placeholder="Enter your correct location details. This includes Location, buildings and offices where you would like the delivery to be made">{{old('location')}}</textarea>
         @endempty
     </div>
     <div class="col-12">
