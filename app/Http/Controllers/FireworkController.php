@@ -37,7 +37,7 @@ class FireworkController extends Controller
     public function create()
     {
         // 
-        $categories = Category::pluck('id','name');
+        $categories = Category::pluck('name','id');
         //dd($categories);
         return view('fireworks.create',['categories'=>$categories]);
     }
