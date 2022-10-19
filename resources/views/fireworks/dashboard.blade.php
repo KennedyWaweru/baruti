@@ -135,7 +135,7 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/fireworks.js"></script>
 <script>
-    const firediv = document.querySelector('#heading-text');
+    const firediv = document.querySelector('.page-header');
     const fireworks = new Fireworks(firediv, {});
 
     fireworks.start();
