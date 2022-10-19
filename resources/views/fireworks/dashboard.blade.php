@@ -133,5 +133,11 @@
 @section('bottom_scripts')
 	<script src="{{asset('js/custom.js')}}"></script>
 
+	<script src="https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/fireworks.js"></script>
+<script>
+    const firediv = document.querySelector('#heading-image');
+    const fireworks = new Fireworks(firediv, {});
 
+    fireworks.start();
+</script>
 @endsection
