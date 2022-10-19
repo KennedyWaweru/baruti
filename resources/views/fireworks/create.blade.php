@@ -11,7 +11,7 @@
 			<div class="container-fluid py-5">
 				<h1 class="display-5 fw-bold text-center">Upload Firework</h1>
 				@foreach($categories as $category)
-					<h3>{{$category->name}}</h3>
+					<h3>{{$category->id}} : {{$category->name}}</h3>
 				@endforeach
 				{!! Form::open(['action' => 'FireworkController@store', 'method'=>'POST', 'enctype'=>'multipart/form-data']) !!}
 
