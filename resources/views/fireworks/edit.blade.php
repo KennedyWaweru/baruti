@@ -21,7 +21,7 @@
 
 			<div class="form-group mb-3">
 				{{Form::label('category', 'Category',['class'=>'form-label'])}}
-				{{Form::select('category', [1 => 'Rocket', 2 => 'Cake',3=>'Roman Candle',4=>'Fountain',5=>'Sparkler',6=>'Parachute'],$firework->category_id, ['class'=>'form-select'])}}
+				{{Form::select('category', $categories,$firework->category_id, ['class'=>'form-select'])}}
 			</div>
 
 			<div class="form-group mb-3">
