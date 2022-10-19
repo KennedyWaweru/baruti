@@ -10,9 +10,7 @@
 		<div class="p-5 mb-4 bg-light rounded-3">
 			<div class="container-fluid py-5">
 				<h1 class="display-5 fw-bold text-center">Upload Firework</h1>
-				@foreach($categories as $category)
-					<h3>{{$category->id}} : {{$category->name}}</h3>
-				@endforeach
+				
 				{!! Form::open(['action' => 'FireworkController@store', 'method'=>'POST', 'enctype'=>'multipart/form-data']) !!}
 
 				<div class="form-group mb-3">
@@ -27,7 +25,8 @@
 
 				<div class="form-group mb-3">
 					{{Form::label('category', 'Category',['class'=>'form-label'])}}
-					{{Form::select('category', [1 => 'Rocket', 2 => 'Cake',3=>'Roman Candle',4=>'Fountain',5=>'Sparkler',6=>'Parachute'],'', ['class'=>'form-select'])}}
+					{{-- {{Form::select('category', [1 => 'Rocket', 2 => 'Cake',3=>'Roman Candle',4=>'Fountain',5=>'Sparkler',6=>'Parachute'],'', ['class'=>'form-select'])}} --}}
+					{{Form::select('category', {{$categories}},'', ['class'=>'form-select'])}}
 				</div>
 
 				<div class="form-group mb-3">

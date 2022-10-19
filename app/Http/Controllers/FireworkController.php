@@ -23,7 +23,7 @@ class FireworkController extends Controller
      */
     public function index()
     {
-        //
+        // 
         $categories = Category::all();
         $packages = Package::all();
         return view('fireworks.dashboard',['categories'=>$categories,'packages'=>$packages]);
@@ -37,7 +37,7 @@ class FireworkController extends Controller
     public function create()
     {
         // 
-        $categories = Category::all();
+        $categories = Category::all()->pluck('id','name')->toArray();
         //dd($categories);
         return view('fireworks.create',['categories'=>$categories]);
     }
