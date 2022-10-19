@@ -29,6 +29,23 @@ body{
 	font-size: 1rem;
 }
 .main .page-header{
+	background-image: url('../images/moon-stars.jpg');
+
+	/* background image is centered horizontally and vertically */
+	background-position: center center;
+
+	/* background image does not tile */
+	background-repeat: no-repeat;
+
+	/* background image is fixed in the viewport so that it does not move 
+	when the content's height is greater than the image's height */
+	background-attachment: fixed;
+
+	/* make the background image rescale based on the container's size */
+	background-size: cover;
+
+	/* set a background color to be displayed while the background image is loading */
+	/* background-color: #000000; */
 	margin: 0;
 	left: 0;
 	right: 0;
@@ -57,7 +74,7 @@ body{
 .main .page-header #heading-text #countdown{
 	color: whitesmoke;
 }
-.main .page-header #heading-image{
+/* .main .page-header #heading-image{
 	margin-left: 0;
 	margin-right: 0;
 	position: relative;
@@ -65,13 +82,14 @@ body{
 	width: 100%;
 	top: 0;
 	left: 0;
-}
+} */
 
-.main .page-header #heading-text #heading-cta{
+/* .main .page-header #heading-text #heading-cta{
 	position: relative;
 	margin-top: 50px;
 	z-index: 1;
 }
+*/
 
 .main .featured-products .card-img-top {
 	height: 50vh;

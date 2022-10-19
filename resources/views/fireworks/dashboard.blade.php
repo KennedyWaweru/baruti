@@ -13,7 +13,6 @@
 		</div>
 		
 		{{-- <img src="{{asset('images/free-fireworks-banner.jpg')}}" alt="" class="img-fluid" id="heading-image"> --}}
-		{{-- <img src="{{asset('images/moon-stars.jpg')}}" alt="" class="img-fluid" id="heading-image"> --}}
 	</div>
 
 	
