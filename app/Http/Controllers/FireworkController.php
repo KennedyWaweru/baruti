@@ -37,7 +37,7 @@ class FireworkController extends Controller
     public function create()
     {
         // 
-        $categories = Category::all()->pluck('id','name')->toArray();
+        $categories = Category::all()->pluck('id','name');
         //dd($categories);
         return view('fireworks.create',['categories'=>$categories]);
     }
