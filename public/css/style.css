@@ -60,6 +60,7 @@ body{
 .main .page-header #heading-text{
 	position: absolute;
 	padding-top: 20vh;
+	opacity: 0.5;
 }
 
 .main .page-header #heading-text h1{
