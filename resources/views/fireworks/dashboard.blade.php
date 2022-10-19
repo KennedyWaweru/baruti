@@ -9,7 +9,7 @@
 			</div>
 			
 			
-			<a href="#" role="button" class="btn btn-success btn-lg" id="heading-cta">Welcome</a>
+			{{-- <a href="#" role="button" class="btn btn-success btn-lg" id="heading-cta">Welcome</a> --}}
 		</div>
 		
 		{{-- <img src="{{asset('images/free-fireworks-banner.jpg')}}" alt="" class="img-fluid" id="heading-image"> --}}
@@ -133,5 +133,5 @@
 @section('bottom_scripts')
 	<script src="{{asset('js/custom.js')}}"></script>
 
-	
+
 @endsection
