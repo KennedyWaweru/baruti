@@ -38,7 +38,7 @@ class FireworkController extends Controller
     {
         // 
         $categories = Category::all();
-        dd($categories);
+        //dd($categories);
         return view('fireworks.create',['categories'=>$categories]);
     }
 
