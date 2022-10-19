@@ -181,7 +181,7 @@ class FireworkController extends Controller
     public function edit(Firework $firework)
     {
         //
-        $categories = Category::pluck('name','id')
+        $categories = Category::pluck('name','id');
         return view('fireworks.edit', ['firework'=>$firework,'categories'=>$categories]);
     }
 
