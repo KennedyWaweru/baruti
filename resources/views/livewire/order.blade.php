@@ -43,14 +43,6 @@
         @else
         <textarea required id="autocomplete" class="form-control" name="location" placeholder="Enter your correct location details. This includes Location, buildings and offices where you would like the delivery to be made">{{old('location')}}</textarea>
         @endempty
-        <div class="form-group" id="latitudeArea">
-            <label>Latitude</label>
-            <input type="text" id="latitude" name="latitude" class="form-control">
-        </div>
-        <div class="form-group" id="longtitudeArea">
-            <label>Longitude</label>
-            <input type="text" name="longitude" id="longitude" class="form-control">
-        </div>
     </div>
     <div class="col-12">
         <label for="delivery-day" class="form-label">Delivery Day</label>
