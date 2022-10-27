@@ -26,6 +26,10 @@
                     <input type="number" class="form-control form-control-sm" id="quantity" value=1 {{-- value="{{$quantity.$product_id}}" --}} wire:model.lazy="quantity.{{$product_id}}" min=1 max={{$stock}}>
                 </form>
             </div>
+
+            @isset($in_stock)
+                <h3 class="text-danger">Not Available</h3>
+            @endisset
             {{--- @if(intval($stock) > 0) --}}
             <div class="col-sm-4 my-2">
                 <a wire:click.prevent="addToCart('{{$product_id}}')" role="button" class="btn btn-outline-primary">

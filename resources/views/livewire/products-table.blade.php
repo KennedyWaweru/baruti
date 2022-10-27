@@ -25,6 +25,7 @@
                     <x-slot name="slug">{{$product->slug}} </x-slot>
                     <x-slot name="product_id">{{$product->id}}</x-slot>
                     <x-slot name="stock">{{(int)$product->stock}}</x-slot>
+                    <x-slot name="in_stock">{{false}}</x-slot>
                     {{Str::limit($product->description,20)}}
                 </x-product-card>
             </div>
