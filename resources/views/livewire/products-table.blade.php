@@ -10,7 +10,7 @@
                 <x-slot name="price">{{$product->price}} </x-slot>
                 <x-slot name="slug">{{$product->slug}} </x-slot>
                 <x-slot name="product_id">{{$product->id}}</x-slot>
-                <x-slot name="stock">{{$product->stock}}</x-slot>
+                <x-slot name="stock">{{(int)$product->stock}}</x-slot>
                 {{Str::limit($product->description,20)}}
             </x-product-card>
         </div>
