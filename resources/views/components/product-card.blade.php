@@ -8,7 +8,7 @@
                 <h3 class="text-danger my-auto mx-auto">Out of Stock</h3>
                 <hr class="mt-2">
 
-                <div class="col-sm-4 my-2">
+                <div class="col-sm-4 my-2 mx-auto">
                     <a href="{{route('fireworks.show',$slug)}}" {{-- wire:click.prevent="openProductPage({{$product_id}})" --}} class="btn btn-outline-primary" role="button">View</a>
                 </div>
             </div>
