@@ -6,6 +6,11 @@
         <div class="card-img-overlay">
             <div class="p-3 mb-2 bg-secondary bg-gradient text-white">
                 <h3 class="text-danger my-auto mx-auto">Out of Stock</h3>
+                <hr class="mt-2">
+
+                <div class="col-sm-4 my-2">
+                    <a href="{{route('fireworks.show',$slug)}}" {{-- wire:click.prevent="openProductPage({{$product_id}})" --}} class="btn btn-outline-primary" role="button">View</a>
+                </div>
             </div>
         </div>
     @endisset
