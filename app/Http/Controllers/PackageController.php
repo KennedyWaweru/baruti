@@ -149,7 +149,18 @@ class PackageController extends Controller
      */
     public function destroy(Package $package)
     {
-        //
+        // delete package from db and resources in s3 bucket
+        $folder_name = 'uploads/'.Str::of($package->name)->slug();
+        $dir_exists = Storage::disk('s3')->exists($folder_name);
+        if(!$dir_exists){
+            $package->delete();
+        }
+
+        if(Storage::disk('s3')->deleteDirectory($folder_name) && $package->delete() ){
+            return redirect()->route('fireworks.index')->with('success', $package->name.' has been deleted');
+        }else{
+            return redirect()->back()->with('error', $package->name.' Could not be deleted');
+        }
     }
     public function checkSlug(Request $request){
         $slug = SlugService::createSlug(Package::class, 'slug', $request->name);

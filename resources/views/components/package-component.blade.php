@@ -10,7 +10,6 @@
                         {{-- @endforeach --}}
                     </div>
                 </div>
-                {{-- <img src="{{asset('images/crown_rockets_assortment.jpg')}}" alt="" class="img-fluid rounded-start"> --}}
             </div>
             <div class="col-8">
                 <div class="card-body">
@@ -63,6 +62,18 @@
                     </div>
 
                 </div>
+
+                @auth 
+                @can('admin')
+                    <div class="card-footer">
+                        <!-- Edit and Delete Button for admin -->
+				        {{Form::open(['action'=>['PackageController@destroy',$package_slug], 'method'=>'POST'])}}
+								@method('DELETE')
+						{!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+						{{Form::close()}}
+                    </div>
+                @endcan
+                @endauth
             </div>
         </div>
     </div>
