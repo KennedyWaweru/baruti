@@ -86,6 +86,7 @@ class PackageController extends Controller
     }
     $package_stock = min($products_stock);
 
+    dd(isset($path));
     $tags = $request->input('tags');
     $tags_array = explode(',',$tags);
     $package_tags=[];
@@ -104,7 +105,8 @@ class PackageController extends Controller
     $package->save();
 
     $package->fireworks()->attach($products);
-    dd($package);
+    
+    return redirect()->url('/packages')->with('success','Package $package_name has been created');
         
     }
 
