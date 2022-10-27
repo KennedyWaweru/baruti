@@ -1,6 +1,13 @@
 <div class="card m-2 rounded-3 border-info">
     {{--<img src="{{asset($image_url)}}" class="card-img-top img-fluid" alt="..."> --}}
     <img src="{{env('AWS_BUCKET_URL').$image_url}}" class="card-img-top img-fluid" alt="{{$name}}">
+    
+    @isset($in_stock)
+        <div class="card-img-overlay">
+            <h3 class="text-danger">Out of Stock</h3>
+        </div>
+    @endisset
+
     <div class="card-body">
         <div class="row">
             <div class="col-8">
@@ -27,9 +34,6 @@
                 </form>
             </div>
 
-            @isset($in_stock)
-                <h3 class="text-danger">Out of Stock</h3>
-            @endisset
             <div class="col-sm-4 my-2">
                 <a wire:click.prevent="addToCart('{{$product_id}}')" role="button" class="btn btn-outline-primary">
                     <i class="fas fa-cart-plus"></i>
