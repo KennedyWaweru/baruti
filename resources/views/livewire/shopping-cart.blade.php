@@ -80,6 +80,7 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-6" id="thumb-div">
+                      {{dd($package_in_cart)}}
                       {{-- <img src="{{asset($package_in_cart['image_url'])}}" alt="" class="img-fluid img-thumbnail"> --}}
                       <img src="{{env('AWS_BUCKET_URL').$package_in_cart['image_url']}}" alt="" class="img-fluid img-thumbnail">
                     </div>
