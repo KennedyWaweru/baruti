@@ -105,7 +105,7 @@ class PackageController extends Controller
 
     $package->fireworks()->attach($products);
     
-    return redirect()->url('/packages')->with('success','Package $package_name has been created');
+    return redirect('/packages')->with('success','Package $package_name has been created');
         
     }
 
