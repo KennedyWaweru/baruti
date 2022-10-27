@@ -51,3 +51,8 @@ Route::get('categories/{category:slug}',[CategoryController::class, 'show'])->na
 Route::get('categories/{category:slug}/edit',[CategoryController::class, 'edit'])->name('category.edit');
 Route::put('categories/{category:slug}/edit',[CategoryController::class,'update'])->name('category.update');
 Route::delete('categories/{category:slug}',[CategoryController::class, 'destroy'])->name('category.destroy');
+
+
+/* Gmail Auth */
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('authorized/google/callback', [GoogleController::class, 'handleGoogleCallback']);
