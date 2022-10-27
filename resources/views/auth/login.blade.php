@@ -1,11 +1,5 @@
 @extends('layouts.app')
 
-
-@section('scripts')
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0" nonce="8Q57Jpdt"></script>
-@endsection
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -85,4 +79,9 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('bottom_scripts')
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0" nonce="pA9zlkJ8"></script>
 @endsection
