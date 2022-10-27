@@ -3,8 +3,8 @@
     <img src="{{env('AWS_BUCKET_URL').$image_url}}" class="card-img-top img-fluid" alt="{{$name}}">
     
     @isset($in_stock)
-        <div class="card-img-overlay">
-            <h3 class="text-danger align-middle">Out of Stock</h3>
+        <div class="card-img-overlay  align-middle">
+            <h3 class="text-danger">Out of Stock</h3>
         </div>
     @endisset
 
