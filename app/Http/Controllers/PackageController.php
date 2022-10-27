@@ -59,12 +59,13 @@ class PackageController extends Controller
     $package_price = $request->price;
     $package_description = $request->description;
     if($request->hasFile('dp_image')){
+        /* TODO: Implement Cloud Storage */
         $folder_name = Str::of($request->input('name'))->slug();
-        Storage::makeDirectory('public/uploads/'.$folder_name);
+        Storage::disk('s3')->makeDirectory('uploads/'.$folder_name);
         $package_image = $request->file('dp_image');
 
-        $name = $package_image->getClientOriginalName();
-        $path = 'storage/uploads/'.$folder_name.'/'.time()."_".$name;
+        $ext = $package_image->getClientOriginalExtension();
+        $path = 'uploads/'.$folder_name.'/'.time()."_".$folder_name.'.'.$ext;
         Image::make($package_image->getRealPath())->resize(300,300)->save(public_path($path));
 
     }
