@@ -86,7 +86,6 @@ class PackageController extends Controller
     }
     $package_stock = min($products_stock);
 
-    dd(isset($path));
     $tags = $request->input('tags');
     $tags_array = explode(',',$tags);
     $package_tags=[];
