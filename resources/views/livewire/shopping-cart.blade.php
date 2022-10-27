@@ -80,7 +80,8 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-6" id="thumb-div">
-                      <img src="{{asset($package_in_cart['image_url'])}}" alt="" class="img-fluid img-thumbnail">
+                      {{-- <img src="{{asset($package_in_cart['image_url'])}}" alt="" class="img-fluid img-thumbnail"> --}}
+                      <img src="{{env('AWS_BUCKET_URL').$package_in_cart['image_url']}}" alt="" class="img-fluid img-thumbnail">
                     </div>
                     <div class="col-6">
                       <h6 class="my-title"><strong>{{$package_in_cart['name']}}</strong></h6>
