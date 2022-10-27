@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+
+@section('scripts')
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0" nonce="8Q57Jpdt"></script>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -69,13 +75,9 @@
                             <a href="{{ url('authorized/google') }}">
                                 <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
                             </a>
-
-                            {{-- <a href="{{ route('facebook.login') }}" class="btn btn-facebook btn-user btn-block"> --}}
-                                <a href="#" class="btn btn-facebook btn-user btn-block">
-                                <i class="fab fa-facebook-f fa-fw"></i>
-                                Login with Facebook
-                             </a>
                         </div>
+
+                        <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
 
                     </form>
                 </div>
