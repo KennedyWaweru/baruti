@@ -28,15 +28,13 @@
             </div>
 
             @isset($in_stock)
-                <h3 class="text-danger">Not Available</h3>
+                <h3 class="text-danger">Out of Stock</h3>
             @endisset
-            {{--- @if(intval($stock) > 0) --}}
             <div class="col-sm-4 my-2">
                 <a wire:click.prevent="addToCart('{{$product_id}}')" role="button" class="btn btn-outline-primary">
                     <i class="fas fa-cart-plus"></i>
                 </a>
             </div>
-            {{-- @endif --}}
         </div>
     </div>
 </div>
