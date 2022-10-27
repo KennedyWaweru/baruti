@@ -66,7 +66,11 @@ class PackageController extends Controller
 
         $ext = $package_image->getClientOriginalExtension();
         $path = 'uploads/'.$folder_name.'/'.time()."_".$folder_name.'.'.$ext;
-        Image::make($package_image->getRealPath())->resize(300,300)->save(public_path($path));
+
+        $img = Image::make($package_image->getRealPath())->resize(300, 300);
+        Storage::disk('s3')->put($path, $img->stream());
+
+        // Image::make($package_image->getRealPath())->resize(300,300)->save(public_path($path));
 
     }
     $products = Firework::findMany($request->products);
