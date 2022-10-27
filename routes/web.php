@@ -54,5 +54,5 @@ Route::delete('categories/{category:slug}',[CategoryController::class, 'destroy'
 
 
 /* Gmail Auth */
-Route::get('authorized/google', 'GoogleController@redirectToGoogle']);
-Route::get('authorized/google/callback', 'GoogleController@handleGoogleCallback']);
+Route::get('authorized/google', 'GoogleController@redirectToGoogle');
+Route::get('authorized/google/callback', 'GoogleController@handleGoogleCallback');
