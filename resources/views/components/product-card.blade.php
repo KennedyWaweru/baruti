@@ -4,7 +4,7 @@
     
     @isset($in_stock)
         <div class="card-img-overlay">
-            <h3 class="text-danger">Out of Stock</h3>
+            <h3 class="text-danger align-middle">Out of Stock</h3>
         </div>
     @endisset
 
