@@ -2,6 +2,7 @@
     <div class="row">
         <h2 class="text-center text-white">Featured Products</h2>
         @foreach($products as $product)
+        @if($product->stock >= 1)
         <div class="col-md-4">
             <x-product-card>
                 <x-slot name="image_url"> {{$product->image_url}} </x-slot>
@@ -13,6 +14,7 @@
                 {{Str::limit($product->description,20)}}
             </x-product-card>
         </div>
+        @endif
         @endforeach
     </div>
 
