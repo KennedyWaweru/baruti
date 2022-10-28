@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="row bg-light">
             <h2>1. Whose privacy policy is this?</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure officiis repellendus optio animi labore qui fuga deleniti laudantium, ea ab unde, voluptate veniam perspiciatis blanditiis excepturi omnis rerum explicabo neque.</p>
             
