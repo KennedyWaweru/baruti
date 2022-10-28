@@ -83,7 +83,7 @@
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a href="{{ url('authorized/facebook') }}" >
+                        <a class="w-75" href="{{ url('authorized/facebook') }}" >
                             <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
                         </a>
 
