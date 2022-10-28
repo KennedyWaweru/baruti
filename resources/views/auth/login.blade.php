@@ -70,11 +70,11 @@
                         </div>
 
                         <div class="row mt-4">
-                            <div class="col-md-6">
+                            
                                 <a href="{{ url('authorized/google') }}">
                                     <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
                                 </a>    
-                            </div>
+                           
                             
                                 <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
                             
