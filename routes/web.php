@@ -56,3 +56,7 @@ Route::delete('categories/{category:slug}',[CategoryController::class, 'destroy'
 /* Gmail Auth */
 Route::get('authorized/google', 'GoogleController@redirectToGoogle');
 Route::get('authorized/google/callback', 'GoogleController@handleGoogleCallback');
+
+/* Facebook Auth */
+Route::get('authorized/facebook', 'FacebookController@redirectToFacebook');
+Route::get('authorized/facebook/callback', 'FacebookController@handleFacebookCallback');

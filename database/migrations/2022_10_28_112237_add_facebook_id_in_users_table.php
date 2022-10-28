@@ -14,7 +14,8 @@ class AddFacebookIdInUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            // add facebook_id column in users table 
+            $table->string('facebook_id')->nullable();
         });
     }
 
@@ -26,7 +27,8 @@ class AddFacebookIdInUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            // drop the facebook_id column
+            $table->dropColumn('facebook_id');
         });
     }
 }
