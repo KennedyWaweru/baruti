@@ -77,12 +77,12 @@
                         <div class="row d-flex justify-content-evenly align-content-around">
                             <div class="col-md-6">
                                 <a href="{{ url('authorized/google') }}">
-                                    <img class="img-fluid vw-100" src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
+                                    <img class="img-fluid" src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
                                 </a>
                             </div>
                             <div class="col-md-6">
                                 <a href="{{ url('authorized/facebook') }}">
-                                    <div class="fb-login-button vw-75" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                    <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
                                 </a>
     
                             </div>
