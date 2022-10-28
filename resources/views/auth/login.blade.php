@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+{{-- Login with facebook script --}}
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0" nonce="WomcZGRo"></script>
 
@@ -69,13 +69,16 @@
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-end mt-4">
-                            <a href="{{ url('authorized/google') }}">
-                                <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
-                            </a>
-
-                            <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-
+                        <div class="form-group row mt-4">
+                            <div class="col-md-6">
+                                <a href="{{ url('authorized/google') }}">
+                                    <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
+                                </a>    
+                            </div>
+                            <div class="col-md-6">
+                                <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                            </div>
+                            
                         </div>
 
                     </form>
