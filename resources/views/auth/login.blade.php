@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('fb_login_script')
     {{-- Login with facebook script --}}
