@@ -76,7 +76,7 @@
 
                 <hr class="my-2 text-success">
 
-                <div class="row d-flex justify-content-evenly align-content-around">
+                <div class="row">
                     <div class="col-md-6">
                         <a href="{{ url('authorized/google') }}">
                             <img class="img-fluid" src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
@@ -93,7 +93,7 @@
                         By continuing, you agree to Baruti's <a href=" {{url('privacy_policy')}} ">privacy policy</a>
                     </small>
                 </div>
-                
+
             </div>
         </div>
     </div>
