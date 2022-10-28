@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="row bg-info">
-    <h1 class="text-center text-white">Baruti's Privacy Policy</h1>
-    <h4 class="text-center text-success">Last updated on: October 10, 2022</h4>
+    <h1 class="text-center text-white fs-1">Baruti's Privacy Policy</h1>
+    <h4 class="text-center text-success fs-3">Last updated on: October 10, 2022</h4>
 </div>
     <div class="container my-2">
         <div class="row bg-light">
