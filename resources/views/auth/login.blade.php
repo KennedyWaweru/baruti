@@ -76,7 +76,10 @@
                                     </a>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                    <a href="#">
+                                        <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                    </a>
+        
                                 </div>
                             </div>
                             
