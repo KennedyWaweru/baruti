@@ -71,29 +71,29 @@
                                 @endif
                             </div>
                         </div>
-
-                        <hr class="my-2 text-success">
-
-                        <div class="row d-flex justify-content-evenly align-content-around">
-                            <div class="col-md-6">
-                                <a href="{{ url('authorized/google') }}">
-                                    <img class="img-fluid" src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
-                                </a>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="{{ url('authorized/facebook') }}">
-                                    <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                                </a>
-    
-                            </div>
-
-                            <small class="text-center my-1">
-                                By continuing, you agree to Baruti's <a href=" {{url('privacy_policy')}} ">privacy policy</a>
-                            </small>
-                        </div>
-                        
                     </form>
                 </div>
+
+                <hr class="my-2 text-success">
+
+                <div class="row d-flex justify-content-evenly align-content-around">
+                    <div class="col-md-6">
+                        <a href="{{ url('authorized/google') }}">
+                            <img class="img-fluid" src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{{ url('authorized/facebook') }}" >
+                            <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                        </a>
+
+                    </div>
+
+                    <small class="text-center my-1">
+                        By continuing, you agree to Baruti's <a href=" {{url('privacy_policy')}} ">privacy policy</a>
+                    </small>
+                </div>
+                
             </div>
         </div>
     </div>
