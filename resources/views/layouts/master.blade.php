@@ -28,6 +28,8 @@
 
 </head>
 <body>
+  @yield('fb_login_script')
+  
   <div class="row">
    @include('partials.nav') 
   </div>
