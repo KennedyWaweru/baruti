@@ -2,7 +2,7 @@
 
 @section('fb_login_script')
     {{-- Login with facebook script --}}
-    <div id="fb-root"></div>
+    <div id="fb-root" class="vw-75"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0" nonce="WomcZGRo"></script>
 @endsection 
 
