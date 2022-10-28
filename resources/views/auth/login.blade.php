@@ -72,8 +72,8 @@
                             </div>
                         </div>
                     </form>
-                </div>
 
+                    
                 <hr class="my-2 text-success">
 
                 <div class="row">
@@ -92,6 +92,8 @@
                     <small class="text-center my-1">
                         By continuing, you agree to Baruti's <a href=" {{url('privacy_policy')}} ">privacy policy</a>
                     </small>
+                </div>
+
                 </div>
 
             </div>
