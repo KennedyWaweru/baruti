@@ -60,3 +60,6 @@ Route::get('authorized/google/callback', 'GoogleController@handleGoogleCallback'
 /* Facebook Auth */
 Route::get('authorized/facebook', 'FacebookController@redirectToFacebook');
 Route::get('authorized/facebook/callback', 'FacebookController@handleFacebookCallback');
+
+/* Page privacy policy */
+Route::view('/privacy_policy', 'privacy_policy');
