@@ -77,12 +77,12 @@
                         <div class="row mb-2">
                             <div class="col-md-6">
                                 <a href="{{ url('authorized/google') }}">
-                                    <img class="img-fluid w-100 p-2" src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
+                                    <img class="img-fluid" src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
                                 </a>
                             </div>
                             <div class="col-md-6">
                                 <a href="{{ url('authorized/facebook') }}">
-                                    <div class="fb-login-button w-100" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                    <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
                                 </a>
     
                             </div>
