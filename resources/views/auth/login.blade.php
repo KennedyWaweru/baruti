@@ -80,7 +80,7 @@
                                     <img class="img-fluid" src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
                                 </a>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 align-center">
                                 <a href="{{ url('authorized/facebook') }}">
                                     <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
                                 </a>
