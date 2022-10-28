@@ -87,11 +87,15 @@
                                 </a>
                             </div>
                             <div class="col-md-6">
-                                <a href="#">
+                                <a href=" {{ url('authorized/facebook') }} ">
                                     <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
                                 </a>
     
                             </div>
+
+                            <small class="text-center">
+                                By continuing, you agree to Baruti's <a href=" {{url('privacy_policy')}} ">privacy policy</a>
+                            </small>
                         </div>
                     </form>
                 </div>
