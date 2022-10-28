@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
+<div class="row bg-info">
+    <h1 class="text-center text-white">Baruti's Privacy Policy</h1>
+    <h4 class="text-center text-success">Last updated on: October 10, 2022</h4>
+</div>
     <div class="container my-2">
-        <div class="bg-info">
-            <h1 class="text-center text-white">Baruti's Privacy Policy</h1>
-            <h4 class="text-center text-success">Last updated on: October 10, 2022</h4>
-        </div>
         <div class="row bg-light">
             <h2>1. Whose privacy policy is this?</h2>
             <p>
