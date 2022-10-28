@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0" nonce="WomcZGRo"></script>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -69,9 +73,10 @@
                             <a href="{{ url('authorized/google') }}">
                                 <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
                             </a>
-                        </div>
 
-                        <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                            <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+                        </div>
 
                     </form>
                 </div>
@@ -81,7 +86,3 @@
 </div>
 @endsection
 
-@section('bottom_scripts')
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0" nonce="pA9zlkJ8"></script>
-@endsection
