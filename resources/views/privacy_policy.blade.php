@@ -1,16 +1,35 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container">
+    <div class="container my-2">
+        <div class="bg-info">
+            <h1 class="text-center text-white">Baruti's Privacy Policy</h1>
+            <h4 class="text-center text-success">Last updated on: October 10, 2022</h4>
+        </div>
         <div class="row bg-light">
             <h2>1. Whose privacy policy is this?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure officiis repellendus optio animi labore qui fuga deleniti laudantium, ea ab unde, voluptate veniam perspiciatis blanditiis excepturi omnis rerum explicabo neque.</p>
+            <p>
+                This Privacy Policy applies to the website accessible via <strong>https://baruti.co.ke</strong>
+                and the webshop that's accessible via the website, owned and operated by KenWebshop Ltd.
+
+                We request and collect your personal data and vouch to work responsibly with it. 
+            </p>
             
             <h2>2. Information We Collect</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit facere, explicabo quae tempore officiis nobis delectus veniam ex magnam corrupti excepturi aliquid at fugit unde repellat repudiandae eos odio molestiae. Impedit, laboriosam enim. Quos voluptas quasi ratione voluptate voluptatem. Cum, voluptatibus nihil! Error ab omnis suscipit veniam velit ducimus facere.</p>
+            <p>
+                When you register for a Baruti.co.ke account, and when you contact us for customer support, we collect the following personal data from you:
+                <strong>Personal Information:</strong> such as, your name (first and last names), email address and location;
+            </p>
             
             <h2>3. How We Use Information</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nobis nisi, quae possimus voluptas est deleniti dolorem aperiam in tenetur, ratione officia quibusdam. Molestiae officiis dolorem minus rerum laboriosam fuga explicabo praesentium animi reiciendis ea nihil id sit quasi quis aperiam amet sunt sequi recusandae, commodi fugit! Nam officiis sed sequi voluptates reiciendis asperiores, officia voluptatibus laudantium, aut ullam praesentium unde excepturi omnis voluptas rerum dignissimos itaque in fugiat explicabo vero hic! Animi placeat pariatur atque modi natus asperiores eveniet consectetur nesciunt quisquam magnam nemo quis, dolor laboriosam, voluptatem nostrum libero vitae ad enim maiores nobis. Illum at quos cupiditate.</p>
+            <p>
+                To ensure we provide you with delivery services, we have to collect some personal data, names and address. All of this is laid out in this section.
+
+                <b>With your consent</b> we provide you with marketing information about products and services via email and SMS which we feel may interest you;
+            </p>
+
+            <h2>4. Information We Share</h2>
+            <p>We do not intend to share your data with any third party.</p>
 
         </div>
     </div>

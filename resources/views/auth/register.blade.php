@@ -93,7 +93,7 @@
     
                             </div>
 
-                            <small class="text-center">
+                            <small class="text-center my-1">
                                 By continuing, you agree to Baruti's <a href=" {{url('privacy_policy')}} ">privacy policy</a>
                             </small>
                         </div>
