@@ -99,6 +99,10 @@
             </div>
         </div>
     </div>
+
+    <div class="bg-light p-2">
+        Don't have an account, <a href="{{url('register')}}">Click here</a> to create a free account.
+    </div>
 </div>
 @endsection
 

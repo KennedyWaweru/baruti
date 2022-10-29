@@ -102,5 +102,9 @@
             </div>
         </div>
     </div>
+
+    <div class="bg-light p-2">
+        Already have an account, <a href="{{url('login')}}">Sign in</a>.
+    </div>
 </div>
 @endsection
