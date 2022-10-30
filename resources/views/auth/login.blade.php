@@ -100,11 +100,14 @@
         </div>
     </div>
 
-    <div class="bg-light p-2 my-2">
-        <p class="fs-4">
-            Don't have an account, <a href="{{url('register')}}">Click here</a> to create a free account.
-        </p>
+    <div class="row justify-content-center">
+        <div class="bg-light p-2 my-2">
+            <p class="fs-4">
+                Don't have an account, <a href="{{url('register')}}">Click here</a> to create a free account.
+            </p>
+        </div>
     </div>
+    
 </div>
 @endsection
 
