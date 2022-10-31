@@ -58,9 +58,9 @@
 									   <tr>
 										<td colspan="4">
 										  <table class="table mb-0">
-											<thead>
+											<thead class="table-dark">
 												<tr>
-													<th scope="col">Package</th>
+													<th scope="col">Product</th>
 													<th scope="col">QTY</th>
 												</tr>
 											</thead>
@@ -84,9 +84,9 @@
            					<h4 class="text-center text-primary">Products</h4>
            					<table class="table table-sm">
            					{{-- <ul class="list-group list-group-flush"> --}}
-           						<thead>
+           						<thead class="table-dark">
            							<tr>
-           								<th scope="col">Package</th>
+           								<th scope="col">Product</th>
            								<th scope="col">QTY</th>
            							</tr>
            						</thead>
