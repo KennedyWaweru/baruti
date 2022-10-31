@@ -24,7 +24,7 @@
             </div>
            
            @isset($order)
-           @foreach($orders as $order)
+           
            <div class="card text-dark @if($order->delivery_status) bg-success @else bg-light @endif @if($order->payment_status) border-success @else border-danger @endif mb-3">
            	<div class="card-header @if($order->payment_status) bg-success @else bg-info @endif">{{$order->name}} 
            		<span class="badge bg-light text-dark float-end fs-6">
