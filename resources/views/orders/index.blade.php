@@ -54,6 +54,7 @@
 	           							<td>{{$order_pack->name}}</td>
 	           							<td>{{$order_pack->pivot->quantity}}</td>
 	           						</tr>
+									{{$order_pack->fireworks}}
 	           					</tbody>
 	           						{{-- <li class="list-group-item">{{$order_pack->name}}</li> --}}
 	           					@endforeach
