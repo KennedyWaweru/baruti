@@ -89,7 +89,7 @@
 												<tr>
 													<td>{{$order_firework->name}}</td>
 	           										{{--<td>{{$order_firework->pivot->quantity}}</td>--}}
-													<td>{{$order_firework}}</td>
+													<td>{{$order_firework->pivot->quantity}}</td>
 												</tr>
 											@endforeach
 										  </table>
