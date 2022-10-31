@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 	<div class="row  bg-secondary p-5">
-        <div class="col-md-7 bg-light p-3">
+        <div class="col-md bg-light p-3">
             <div class="row my-3">
                 <div class="tl-container">
                     <ul class="timeline">
