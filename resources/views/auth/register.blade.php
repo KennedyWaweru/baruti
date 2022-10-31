@@ -104,12 +104,15 @@
     </div>
 
     <div class="row justify-content-center">
-        <div class="bg-light p-2 my-2">
-            <p class="fs-4">
-                Already have an account, <a href="{{url('login')}}">Sign in</a>.
-            </p>
-            
+        <div class="col-md-8">
+            <div class="bg-light p-2 my-2">
+                <p class="fs-4">
+                    Already have an account, <a href="{{url('login')}}">Sign in</a>.
+                </p>
+                
+            </div>
         </div>
+        
     </div>
     
 </div>
