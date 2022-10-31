@@ -67,7 +67,8 @@
 											@foreach($order_pack->fireworks as $order_firework)
 												<tr>
 													<td>{{$order_firework->name}}</td>
-	           										<td>{{$order_firework->pivot->quantity}}</td>
+	           										{{--<td>{{$order_firework->pivot->quantity}}</td>--}}
+													<td>{{$order_firework}}</td>
 												</tr>
 											@endforeach
 										  </table>
