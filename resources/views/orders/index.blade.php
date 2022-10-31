@@ -54,7 +54,26 @@
 	           							<td>{{$order_pack->name}}</td>
 	           							<td>{{$order_pack->pivot->quantity}}</td>
 	           						</tr>
-									{{$order_pack->fireworks}}
+									
+									   <tr>
+										<td colspan="4">
+										  <table class="table mb-0">
+											<thead>
+												<tr>
+													<th scope="col">Package</th>
+													<th scope="col">QTY</th>
+												</tr>
+											</thead>
+											@foreach($order_pack->fireworks as $order_firework)
+												<tr>
+													<td>{{$order_firework->name}}</td>
+	           										<td>{{$order_firework->pivot->quantity}}</td>
+												</tr>
+											@endforeach
+										  </table>
+										</td>
+									  </tr>
+
 	           					</tbody>
 	           						{{-- <li class="list-group-item">{{$order_pack->name}}</li> --}}
 	           					@endforeach
