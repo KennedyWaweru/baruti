@@ -57,7 +57,7 @@
            			<div class="col-md-4 col-sm-12">
            				{{-- <h5 class="card-title">Order Items</h5> --}}
            				<div class="card-text">
-           					@isset($order->packages)
+           					@empty($order->packages)
 
            					@else
            					<h4 class="text-center text-info">Packages:</h4>
