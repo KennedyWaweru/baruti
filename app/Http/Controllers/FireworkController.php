@@ -75,7 +75,7 @@ class FireworkController extends Controller
             'slug' => 'required|unique:fireworks',
             'category' => 'required',
             'dp_image' => 'required|image|max:5000',
-            'images.*' => 'image|max:5000',
+            'images.*' => 'required|image|max:5000',
             'price' => 'required|integer',
             'video_url' => 'nullable|active_url',
             'shots' => 'integer',
