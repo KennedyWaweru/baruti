@@ -17,7 +17,8 @@ class ProductsTable extends Component
     //public $listeners = ['moreProducts'];
     public function mount(){
         //$this->products = Firework::all();
-        $this->products = Firework::forPage(1,4);
+        $this->products = Firework::forPage(1,4)->collect()->all();
+        
         //$this->products = DB::table('fireworks')->limit($this->cursor)->get();
         foreach($this->products as $product){
             $this->quantity[$product->id] = 1;
