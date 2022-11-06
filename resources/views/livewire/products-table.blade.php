@@ -36,7 +36,15 @@
         @endforeach
     </div>
 
+    <div class="row">
+        {{-- This row contains the progress bar for loading more products --}}
+        <div wire:loading.delay wire:target="moreProducts">
+            Processing Payment...
+        </div>
+        {{-- After more products have loaded append to this row --}}
+    </div>
 
+    {{-- This row has the moreProducts CTA--}}
     <div class="row text-center mt-3 mx-5" id="more-btn">
         <a wire:click.prevent="moreProducts" wire:loading.remove role="button" class="btn btn-lg btn-outline-light bg-danger bg-gradient">
             More Products <br>
