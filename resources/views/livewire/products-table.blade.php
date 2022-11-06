@@ -39,7 +39,7 @@
     <div class="row" id="moreProducts">
         {{-- This row contains the progress bar for loading more products --}}
         <div wire:loading.delay wire:target="moreProducts">
-            <div class="text-center">
+            <div class="text-center my-2">
                 <div class="spinner-border spinner-grow text-primary" role="status">
                   <span class="visually-hidden">Loading...</span>
                 </div>
