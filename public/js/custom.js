@@ -30,9 +30,9 @@ function countdown(){
 }
 
 window.setInterval(countdown, 1000);
-Livewire.on('loadMoreProducts', (event)=>{
-	console.log('Here at least');
-	alert(`Load More Products`);
+window.addEventListener('loadMoreProducts', (event)=>{
+	console.log('something clear');
+	alert('Something cool');
 	var moreProductsRow = document.getElementById('moreProducts').innerHTML;
 	moreProductsRow.append('<h1>Hello new world</h1>');
 });
