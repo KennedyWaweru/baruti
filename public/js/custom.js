@@ -31,6 +31,7 @@ function countdown(){
 
 window.setInterval(countdown, 1000);
 window.addEventListener('loadMoreProducts', (event)=>{
+	alert(`Load More Products`);
 	var moreProductsRow = document.getElementById('moreProducts').innerHTML;
 	moreProductsRow.append('<h1>Hello new world</h1>');
 });
