@@ -18,7 +18,6 @@ class ProductsTable extends Component
     //public $listeners = ['moreProducts'];
     public function mount(){
         //$this->products = Firework::all();
-        //$this->products = DB::table('fireworks')->limit($this->cursor)->get();
         $this->products = Firework::forPage($this->current_page,$this->products_on_page)->get();
         //dd($this->products);
         
@@ -51,6 +50,6 @@ class ProductsTable extends Component
 
     public function moreProducts(){
         $this->current_page += 1;
-        $this->mount($this->current_page);
+        //$this->mount($this->current_page);
     }
 }
