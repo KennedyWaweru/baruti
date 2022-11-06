@@ -39,7 +39,18 @@
     <div class="row" id="moreProducts">
         {{-- This row contains the progress bar for loading more products --}}
         <div wire:loading.delay wire:target="moreProducts">
-            <h3 class="text-white text-center">Processing Payment...</h3>
+            <div class="text-center">
+                <div class="spinner-border spinner-grow text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border spinner-grow text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                  
+              </div>
         </div>
         {{-- After more products have loaded append to this row --}}
         
