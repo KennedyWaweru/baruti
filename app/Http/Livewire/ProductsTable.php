@@ -50,7 +50,7 @@ class ProductsTable extends Component
     }
 
     public function moreProducts(){
-        $this->cursor += 1;
-        $this->mount($this->cursor);
+        $this->current_page += 1;
+        $this->mount($this->current_page);
     }
 }
