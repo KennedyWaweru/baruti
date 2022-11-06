@@ -42,3 +42,10 @@ window.addEventListener('paymentFailed', (event) => {
 	$("#paymentModal .modal-header button").removeClass("invisible");
 	$("#paymentModal .modal-footer button").removeClass("invisible");
 });
+
+window.addEventListener('loadMoreProducts', (event)=>{
+	console.log('something clear');
+	alert('Something cool');
+	var moreProductsRow = document.getElementById('moreProducts').innerHTML;
+	moreProductsRow.append('<h1>Hello new world</h1>');
+});
