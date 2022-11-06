@@ -105,14 +105,7 @@ class FireworkController extends Controller
         $firework->effect_colors = json_encode($colors);
         // Logic for saving the images to filesystem
         $folder_name = Str::of($request->input('name'))->slug();
-        /*
-        // Local Storage
-        Storage::makeDirectory('public/uploads/'.$folder_name);
-        $image = $request->file('dp_image');
-        $path = 'storage/uploads/'.$folder_name.'/'.time()."_".$image->getClientOriginalName();
-        $img = Image::make($image->getRealPath())->resize(300,300)->save(public_path($path));
-        */
-
+       
         // s3 bucket 
         $folder_path = 'uploads/'.$folder_name;
         Storage::disk('s3')->makeDirectory($folder_path);
@@ -125,14 +118,6 @@ class FireworkController extends Controller
        
         if($request->hasFile('images')){
             foreach($request->file('images') as $_img){
-
-                /*
-                Local Storage
-                $name = $_img->getClientOriginalName();
-                $path = 'storage/uploads/'.$folder_name.'/'.time()."_".$name;
-                Image::make($_img->getRealPath())->resize(300,300)->save(public_path($path));
-
-                */
 
                 // s3 bucket storage
                 $path = 'uploads/'.$folder_name.'/'.time().'_'.$folder_name.'.'.$_img->getClientOriginalExtension();
@@ -233,20 +218,9 @@ class FireworkController extends Controller
         // Logic for saving the images to filesystem
         
         $folder_name = $firework->getOriginal('slug');
-
-        // Local File system
-        // Storage::makeDirectory('public/uploads/'.$folder_name);
-        //$folder_path = 'uploads/'.$folder_name;
-        //Storage::disk('s3')->makeDirectory($folder_path);
-
-        
         
         if($request->hasFile('dp_image')){
             $image = $request->file('dp_image');
-            /*
-            $path = 'storage/uploads/'.$folder_name.'/'.time()."_".$image->getClientOriginalName();
-            $img = Image::make($image->getRealPath())->resize(300,300)->save(public_path($path));
-            */
             $current_image = $firework->image_url;
             // Update files on s3 bucket
             $image = $request->file('dp_image');
@@ -269,14 +243,6 @@ class FireworkController extends Controller
                 Storage::disk('s3')->delete($img_file);
             }
             foreach($request->file('images') as $_img){
-                /* 
-                Local file system
-                $name = $_img->getClientOriginalName();
-                $path = 'storage/uploads/'.$folder_name.'/'.time()."_".$name;
-                Image::make($_img->getRealPath())->resize(300,300)->save(public_path($path));
-                #$img_path = $img->move('storage/uploads/'.$folder_name, $name);
-                */
-
                 // s3 bucket storage
                 $path = 'uploads/'.$folder_name.'/'.time().'_'.$folder_name.'.'.$_img->getClientOriginalExtension();
                 $image = Image::make($_img->getRealPath())->resize(300,300)->stream();
@@ -289,14 +255,6 @@ class FireworkController extends Controller
 
             // check if name of the product changed so as to move the directory
             $has_name_changed = $firework->isDirty('name');
-            /*
-            if($has_name_changed){
-                //$current_folder = 'uploads/'.$firework->getOriginal('slug');
-                $new_folder_name = 'uploads/'.$firework->slug;
-                $folder_path = 'uploads/'.$folder_name;
-                Storage::disk('s3')->move($folder_path, $new_folder_name);
-            }
-            */
         }
        
         if ($firework->save()){
@@ -316,20 +274,6 @@ class FireworkController extends Controller
     {
         // delete the product and related files
         //dd($firework);
-
-        /* 
-
-        Delete product and resources from local storage
-
-        $fwork_name = $firework->name;
-        $fwork_dir = 'public/uploads/'.$firework->slug;
-        if(Storage::deleteDirectory($fwork_dir) && $firework->delete()){
-            return redirect()->route('fireworks.index')->with('success',$fwork_name.' Deleted');
-        }else{
-            return redirect()->back()->with('error','Could not delete '.$fwork_name);
-        }
-        */
-
         // Delete product and resources from s3 bucket
         $fwork_name = $firework->name;
         $fwork_slug = $firework->slug;

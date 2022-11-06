@@ -31,9 +31,6 @@ class CategoryController extends Controller
         if($request->hasFile('image')){
             //$img_prefix = "category_pic_".$name;
 
-            /* Save image file in local storage */
-            //$img = $request->file('image')->store('public/category_images');
-
             $img_file = $request->file('image');
             $img_ext = $img_file->getClientOriginalExtension();
             $img_name = time().'_'.Str::slug($name).'.'.$img_ext;
@@ -53,14 +50,10 @@ class CategoryController extends Controller
 
     }
     public function show(Category $category){
-        //dd($category->id);
         $fireworks = Firework::where('category_id',$category->id)->get();
         return view('category.show',['category'=>$category, 'fireworks'=>$fireworks]);
-        //dd($fireworks);
     }
     public function edit(Category $category){
-        #$category = Category::findOrFail($id);
-        //dd($category);
         return view('category.edit',['category'=>$category]);
     }
 
@@ -74,17 +67,7 @@ class CategoryController extends Controller
         $category -> name = $request->input('name');
         $category -> description = $request->input('description');
         if ($request->hasFile('image')){
-
             $current_image = $category->image;
-
-            /*
-            Update category image from local storage
-            // delete current image
-            if($current_image){Storage::delete($current_image);}
-            $img = $request->file('image')->store('public/category_images');
-            $img = Str::replaceFirst('public','storage',$img);
-
-            */
 
             // Update category image on s3 storage
             // $img_name = 'category_images/'.$current_image;
@@ -109,19 +92,6 @@ class CategoryController extends Controller
     public function destroy(Category $category){
         // delete the product and related files
         //dd($category);
-        /*
-
-        Delete from Local storage
-
-        $category_name = $category->name;
-        $category_dir = 'public/category_images/'.$category->slug;
-        if(Storage::deleteDirectory($category_dir) && $category->delete()){
-            return redirect()->route('category.index')->with('success',$category_name.' Deleted');
-        }else{
-            return redirect()->back()->with('error','Could not delete '.$category_name);
-        }
-
-        */
 
         // Delete from s3 bucket 
         $category_name = $category->name;
