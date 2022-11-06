@@ -39,7 +39,7 @@
     <div class="row">
         {{-- This row contains the progress bar for loading more products --}}
         <div wire:loading.delay wire:target="moreProducts">
-            Processing Payment...
+            <h3 class="text-white text-center">Processing Payment...</h3>
         </div>
         {{-- After more products have loaded append to this row --}}
     </div>
