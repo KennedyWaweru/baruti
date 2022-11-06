@@ -38,7 +38,7 @@
 
 
     <div class="row text-center mt-3 mx-5" id="more-btn">
-        <a wire:click.prevent="moreProducts" role="button" class="btn btn-lg btn-outline-light bg-danger bg-gradient">
+        <a wire:click.prevent="moreProducts" wire:loading.remove role="button" class="btn btn-lg btn-outline-light bg-danger bg-gradient">
             More Products <br>
             <span id="arrow-down">
                 <i class="fas fa-angle-double-down"></i>
