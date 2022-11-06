@@ -12,13 +12,14 @@ class ProductsTable extends Component
     public $products;
     public array $quantity;
     public array $stock;
-    public $cursor = 6;
+    public $current_page = 1;
+    public $products_on_page = 6;
     
     //public $listeners = ['moreProducts'];
     public function mount(){
         //$this->products = Firework::all();
         //$this->products = DB::table('fireworks')->limit($this->cursor)->get();
-        $this->products = Firework::forPage(1,6)->get();
+        $this->products = Firework::forPage($current_page,$products_on_page)->get();
         //dd($this->products);
         
         foreach($this->products as $product){
@@ -49,7 +50,7 @@ class ProductsTable extends Component
     }
 
     public function moreProducts(){
-        $this->cursor += 6;
+        $this->cursor += 1;
         $this->mount($this->cursor);
     }
 }
