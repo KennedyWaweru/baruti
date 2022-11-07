@@ -14,7 +14,7 @@ function countdown(){
 
 	//const remainder_mss = rem_hours % (1000*60*60)
 	const rem_mss = remainder_ms % (1000*60*60)
-	const rem_mins = rem_ms / (1000*60)
+	const rem_mins = rem_mss / (1000*60)
 
 	const rem_ms = rem_mss % (1000*60)
 	const rem_secs = rem_ms / (1000)
@@ -32,7 +32,7 @@ function countdown(){
 window.setInterval(countdown, 1000);
 window.addEventListener('loadMoreProducts', (event)=>{
 	console.log('something clear');
-	alert('Something cool');
+	alert('Something cooler');
 	var moreProductsRow = document.getElementById('moreProducts').innerHTML;
 	moreProductsRow.append('<h1>Hello new world</h1>');
 });
