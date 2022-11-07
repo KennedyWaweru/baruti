@@ -143,7 +143,9 @@ class PackageController extends Controller
      */
     public function update(Request $request, Package $package)
     {
-        //
+        // update details about a package
+        dd($package);
+
     }
 
     /**
