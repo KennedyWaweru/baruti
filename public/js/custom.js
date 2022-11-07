@@ -32,7 +32,5 @@ window.setInterval(countdown, 1000);
 window.addEventListener('loadMoreProducts', (event)=>{
 	console.log('something clear');
 	//alert('Something cooler');
-	var moreProductsRow = document.getElementById('moreProducts').innerHTML;
-	//moreProductsRow.append('<h1>Hello new world</h1>');
-	moreProductsRow = '<h1>Hello new world</h1>';
+	document.getElementById('moreProducts').innerHTML = '<h1>Hello new world</h1>';
 });
