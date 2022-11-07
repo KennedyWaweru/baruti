@@ -11,6 +11,10 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class CategoryController extends Controller
 {
+    public function __construct(){
+        /* middleware for admin */
+        $this->middleware(['auth','can:admin'])->except(['index','show']);
+    }
     public function index(){
         $categories = Category::all();
         return view('category.index',['categories'=>$categories]);
