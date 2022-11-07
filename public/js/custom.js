@@ -2,6 +2,7 @@
 function countdown(){
 	const current_time = new Date();
 	const current_year = new Date().getFullYear();
+	console.log(`Current year ${current_year}`);
 	const new_year = new Date(2023, 0, 1, 0, 0, 0, 0);
 
 
