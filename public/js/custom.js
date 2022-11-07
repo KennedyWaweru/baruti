@@ -2,7 +2,7 @@
 function countdown(){
 	const current_time = new Date();
 	const current_year = new Date().getFullYear();
-	const new_year = new Date(current_year, 0, 1, 0, 0, 0, 0);
+	const new_year = new Date(2023, 0, 1, 0, 0, 0, 0);
 
 
 	const remaining_time = new_year.getTime() - current_time.getTime();
