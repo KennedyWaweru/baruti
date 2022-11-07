@@ -26,7 +26,7 @@ class OrderPayment extends Component
     public function getAccessToken(){
         $consumer_key = env('MPESA_CONSUMER_KEY');
         $consumer_secret = env('MPESA_CONSUMER_SECRET');
-        $auth_url = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
+        $auth_url = env('MPESA_AUTH_URL');
         $r = Http::withBasicAuth($consumer_key, $consumer_secret)->get($auth_url);
         $access_token = $r->json()['access_token'];
         return $access_token;
@@ -39,7 +39,7 @@ class OrderPayment extends Component
         $payment_phone = '254'.$msisdn_mobile_num;
         $phone_num = $payment_phone;
         // TODO: move callback url to proper server
-        $callback_url = "https://dasclab.uonbi.ac.ke/analytics/api/process_query";
+        $callback_url = env('MPESA_CALLBACK_URL');
         
         $shortcode = env('MPESA_SHORTCODE');
         $passkey = env('MPESA_PASSKEY');
@@ -48,9 +48,8 @@ class OrderPayment extends Component
         $enc_pwd = base64_encode($raw_password);
         
         $access_token = $this->getAccessToken();
-        $stk_push_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest";
+        $stk_push_url = env('MPESA_STK_PUSH_URL');
         $header = array('Authorization'=>'Bearer '.$access_token);
-        //dd($this->form_details);
         $req_body = array(
           "BusinessShortCode"=>$shortcode,
           "Password"=> $enc_pwd,    
@@ -85,7 +84,7 @@ class OrderPayment extends Component
     }
 
     public function checkTransactionStatus($checkout_request_id){
-        $query_url =  "https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query";
+        $query_url =  env('MPESA_QUERY_URL');
         $shortcode = env('MPESA_SHORTCODE');
         $passkey = env('MPESA_PASSKEY');
         $timestamp = strftime("%Y%m%d%H%M%S",time());
@@ -141,7 +140,7 @@ class OrderPayment extends Component
         $phone = $order->phone;
         $order_username = $order->name;
         //$api_url = "https://api.africastalking.com/version1/messaging";
-        $app_username = "kenshop";
+        $app_username = env('AT_API_USERNAME');
         $api_key = env('AT_API_KEY');
         $request_headers = array(
             'Accept'=>'application/json',
