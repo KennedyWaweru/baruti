@@ -52,7 +52,7 @@ class ProductsTable extends Component
         $this->current_page += 1;
         $new_products = Firework::forPage($this->current_page,$this->products_on_page)->get();
         $this->products = $this->products -> merge($new_products);
-        dd($this->products);
-        $this->mount($this->current_page);
+        //dd($this->products);
+        //$this->mount($this->current_page);
     }
 }
