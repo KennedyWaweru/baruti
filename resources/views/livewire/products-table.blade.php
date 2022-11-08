@@ -52,7 +52,6 @@
                   
               </div>
         </div>
-        {{-- After more products have loaded append to this row --}}
         
     </div>
 
