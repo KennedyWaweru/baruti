@@ -1,1 +1,1 @@
-baruti.co.ke is a web application for a webshop that specializes in sales and distribution of fireworks.
+_baruti.co.ke_ is a web application for a webshop that specializes in sales and distribution of fireworks.
