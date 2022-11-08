@@ -50,9 +50,11 @@ class ProductsTable extends Component
 
     public function moreProducts(){
         $this->current_page += 1;
-        //$this->mount($this->current_page);
-        $more_products = Firework::forPage($this->current_page,$this->products_on_page)->get();
+        //
+        
+        //$more_products = Firework::forPage($this->current_page,$this->products_on_page)->get();
         $this->dispatchBrowserEvent('loadMoreProducts');
         //dd($more_products);
+        $this->mount($this->current_page);
     }
 }
