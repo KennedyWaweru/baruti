@@ -42,6 +42,7 @@ class OrderPayment extends Component
         $callback_url = env('MPESA_CALLBACK_URL');
         
         $shortcode = env('MPESA_SHORTCODE');
+        $mpesa_till = env('MPESA_TILL');
         $passkey = env('MPESA_PASSKEY');
         $timestamp = strftime("%Y%m%d%H%M%S",time());
         $raw_password = $shortcode.$passkey.$timestamp;
@@ -58,11 +59,11 @@ class OrderPayment extends Component
           //"Amount"=>$amount_to_charge, 
           "Amount"=>10,   
           "PartyA"=>$phone_num,    
-          "PartyB"=>9277569,    
+          "PartyB"=>$mpesa_till,    
           "PhoneNumber"=>$phone_num,    
           "CallBackURL"=>$callback_url,    
           "AccountReference"=>"KenWebShop",    
-          "TransactionDesc"=>"Using php HTTP GUZZLE"
+          "TransactionDesc"=>"Buy Goods From baruti.co.ke"
       );
 
         $res = Http::withHeaders($header)->post($stk_push_url, $req_body);
