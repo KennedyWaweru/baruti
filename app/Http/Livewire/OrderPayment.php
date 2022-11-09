@@ -54,7 +54,7 @@ class OrderPayment extends Component
           "BusinessShortCode"=>$shortcode,
           "Password"=> $enc_pwd,    
           "Timestamp"=>$timestamp,    
-          "TransactionType"=> "CustomerPayBillOnline",    
+          "TransactionType"=> "CustomerBuyGoodsOnline",    
           //"Amount"=>$amount_to_charge, 
           "Amount"=>10,   
           "PartyA"=>$phone_num,    
