@@ -28,7 +28,6 @@ class OrderPayment extends Component
         $consumer_secret = env('MPESA_CONSUMER_SECRET');
         $auth_url = env('MPESA_AUTH_URL');
         $r = Http::withBasicAuth($consumer_key, $consumer_secret)->get($auth_url);
-        dd($r);
         $access_token = $r->json()['access_token'];
         return $access_token;
     }
