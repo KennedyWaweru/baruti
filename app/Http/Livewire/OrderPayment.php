@@ -58,7 +58,7 @@ class OrderPayment extends Component
           //"Amount"=>$amount_to_charge, 
           "Amount"=>10,   
           "PartyA"=>$phone_num,    
-          "PartyB"=>$shortcode,    
+          "PartyB"=>9277569,    
           "PhoneNumber"=>$phone_num,    
           "CallBackURL"=>$callback_url,    
           "AccountReference"=>"KenWebShop",    
