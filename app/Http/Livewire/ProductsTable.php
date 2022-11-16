@@ -35,7 +35,7 @@ class ProductsTable extends Component
         $product = Firework::findOrFail($product_id);
         $qty = (int)$this->quantity[$product->id] <= (int)$product->stock 
                     ? $this->quantity[$product->id] 
-                    : $product->stock;
+                    : 0;
 
         $cartItem = Cart::add([
             'id' => $product->id,
