@@ -13,6 +13,9 @@ use App\Package;
 
 class OrderController extends Controller
 {
+    public function __construct(){
+        $this->middleware(['auth','can:admin'])->only('index');
+    }
     //
     public function create(){
         return view('orders.create');
