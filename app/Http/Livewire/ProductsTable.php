@@ -37,15 +37,18 @@ class ProductsTable extends Component
                     ? $this->quantity[$product->id] 
                     : 0;
 
-        $cartItem = Cart::add([
-            'id' => $product->id,
-            'name' => $product->name,
-            'qty' => (int)$qty,
-            'price' => $product->price,
-            'options'=>['type'=>'product']
-        ])->associate('Firework');
-
-        $this->emitTo('shopping-cart','cart-updated');
+        if((int)$qty){
+            $cartItem = Cart::add([
+                    'id' => $product->id,
+                    'name' => $product->name,
+                    'qty' => (int)$qty,
+                    'price' => $product->price,
+                    'options'=>['type'=>'product']
+                ])->associate('Firework');
+    
+            $this->emitTo('shopping-cart','cart-updated');
+        }
+        
     }
 
     public function moreProducts(){
