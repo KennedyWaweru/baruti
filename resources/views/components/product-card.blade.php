@@ -8,9 +8,14 @@
                 <h3 class="text-danger text-center">Out of Stock</h3>
                 <hr class="mt-2">
 
-                <div class="col-sm-4 my-2 mx-auto">
-                    <a href="{{route('fireworks.show',$slug)}}" {{-- wire:click.prevent="openProductPage({{$product_id}})" --}} class="btn btn-outline-primary" role="button">View</a>
-                </div>
+                @auth 
+                    @can('admin')
+                    <div class="col-sm-4 my-2 mx-auto">
+                        <a href="{{route('fireworks.show',$slug)}}" {{-- wire:click.prevent="openProductPage({{$product_id}})" --}} class="btn btn-outline-primary" role="button">View</a>
+                    </div>
+                    @endcan
+                @endauth 
+
             </div>
         </div>
     @endisset
