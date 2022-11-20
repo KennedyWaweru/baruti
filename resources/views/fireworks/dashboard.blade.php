@@ -17,6 +17,30 @@
 
 	
 	<div class="container-fluid">
+		<!-- Packages Section -->
+		<section class="packages mt-5">
+			<div class="row">
+				<h2 class="text-center text-white py-2">Packages</h2>
+				@isset($packages)
+				@foreach($packages as $package)
+					@livewire('package-table',['package'=>$package]))
+				@endforeach
+				@else
+				<h1>No Package found</h1>
+				@endisset
+				
+			</div>
+		</section>
+		<!-- End of packaged section -->
+
+		<hr class="my-4 text-white">
+
+		<!-- Products Section -->
+
+		@livewire('products-table')
+		
+		<!-- End of Featured Products Section -->
+
 		<!-- Categories Section -->
 		<section class="categories">
 			<div class="row mt-5 text-center">
@@ -52,30 +76,6 @@
 			</div>
 		</section>
 		<!-- End of Categories -->
-
-		<!-- Packages Section -->
-		<section class="packages mt-5">
-			<div class="row">
-				<h2 class="text-center text-white py-2">Packages</h2>
-				@isset($packages)
-				@foreach($packages as $package)
-					@livewire('package-table',['package'=>$package]))
-				@endforeach
-				@else
-				<h1>No Package found</h1>
-				@endisset
-				
-			</div>
-		</section>
-		<!-- End of packaged section -->
-
-		<hr class="my-4 text-white">
-
-		<!-- Products Section -->
-
-		@livewire('products-table')
-		
-		<!-- End of Featured Products Section -->
 
 		<!-- About our shop and the online shopping experience -->
 		<section class="details my-4">

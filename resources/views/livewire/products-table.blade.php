@@ -63,5 +63,8 @@
                 <i class="fas fa-angle-double-down"></i>
             </span>
         </a>
+        @if($has_more_products)
+            <h1>No More Products</h1>
+        @endif
     </div>
 </section>

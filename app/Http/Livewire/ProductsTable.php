@@ -14,6 +14,7 @@ class ProductsTable extends Component
     public array $stock;
     public $current_page = 1;
     public $products_on_page = 6;
+    public $has_more_products = true;
     
     //public $listeners = ['moreProducts'];
     public function mount(){
@@ -45,16 +46,21 @@ class ProductsTable extends Component
                     'price' => $product->price,
                     'options'=>['type'=>'product']
                 ])->associate('Firework');
-    
-            $this->emitTo('shopping-cart','cart-updated');
+        }else {
+            // the quantity in this order is greater than stock
         }
-        
+        $this->emitTo('shopping-cart','cart-updated');
     }
 
     public function moreProducts(){
         $this->current_page += 1;
         $new_products = Firework::forPage($this->current_page,$this->products_on_page)->get();
 
+        // check length of new_products
+        // if length is 0 then more_products button should be disabled
+        if(! $new_products->count()){
+            $has_more_products = false;
+        }
         foreach($new_products as $product){
             $this->quantity[$product->id] = 1;
             $this->stock[$product->id] = $product->stock;
