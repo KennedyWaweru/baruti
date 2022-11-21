@@ -39,13 +39,14 @@
 
     {{-- This row has the moreProducts CTA--}}
     <div class="row text-center mt-3 mx-5" id="more-btn">
+        @if($has_more_products)
         <a wire:click.prevent="moreProducts" wire:loading.remove role="button" class="btn btn-lg btn-outline-light bg-danger bg-gradient">
             More Products <br>
             <span id="arrow-down">
                 <i class="fas fa-angle-double-down"></i>
             </span>
         </a>
-        @if($has_more_products)
+        @else
             <h1>No More Products</h1>
         @endif
     </div>
