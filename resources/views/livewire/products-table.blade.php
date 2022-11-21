@@ -10,7 +10,7 @@
                 <x-slot name="slug">{{$product->slug}} </x-slot>
                 <x-slot name="product_id">{{$product->id}}</x-slot>
                 <x-slot name="stock">{{(int)$product->stock}}</x-slot>
-                @if((int)$product->stock >= 1)
+                @if((int)$product->stock < 1)
                 <x-slot name="in_stock">{{false}}</x-slot>
                 @endif
                 {{Str::limit($product->description,20)}}
