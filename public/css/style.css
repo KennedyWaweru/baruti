@@ -43,6 +43,9 @@ body{
 
 	/* make the background image rescale based on the container's size */
 	background-size: cover;
+	-webkit-transition-size: cover;
+	-o-transition-size: cover;
+	-moz-transition-size: cover;
 
 	/* set a background color to be displayed while the background image is loading */
 	/* background-color: #000000; */
