@@ -5,6 +5,12 @@
 		<div id="heading-text">
 			<div class="p-4 w-100 h-100 rounded-3 border bg-dark">
 				<h1 id="countdown"></h1>
+				<div class="d-flex flex-row justify-content-evenly bd-highlight mb-3">
+					<div class="p2 bd-highlight">Flex Item</div>
+					<div class="p2 bd-highlight">Flex Item</div>
+					<div class="p2 bd-highlight">Flex Item</div>
+					<div class="p2 bd-highlight">Flex Item</div>
+				</div>
 				<h1>Happy New Year</h1>
 			</div>
 			
