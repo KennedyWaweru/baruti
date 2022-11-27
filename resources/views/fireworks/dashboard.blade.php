@@ -10,25 +10,25 @@
 						<h1 id="countdownDays">
 
 						</h1>
-						<small class="text-muted">Day</small>
+						<small class="text-purple fs-6 fw-bold">Days</small>
 					</div>
 					<div class="p2" id="countdown">
 						<h1 id="countdownHours">
 
 						</h1>
-						<small class="text-muted">Hour</small>
+						<small class="text-purple fs-6 fw-bold">Hours</small>
 					</div>
 					<div class="p2 bd-highlight" id="countdown">
 						<h1 id="countdownMins">
 
 						</h1>
-						<small class="text-muted">Min</small>
+						<small class="text-muted fs-6 fw-bold">Minutes</small>
 					</div>
 					<div class="p2 bd-highlight" id="countdown">
 						<h1 id="countdownSecs">
 
 						</h1>
-						<small class="text-muted">Sec</small>
+						<small class="text-muted fs-6 fw-bold">Seconds</small>
 					</div>
 				</div>
 				<h1>Happy New Year</h1>
