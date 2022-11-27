@@ -59,7 +59,6 @@ class ProductsTable extends Component
         // check length of new_products
         // if length is 0 then more_products button should be disabled
         if(! $new_products->count()){
-            //dd('no more');
             $this->has_more_products = false;
         }
         foreach($new_products as $product){
