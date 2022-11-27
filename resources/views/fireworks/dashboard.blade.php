@@ -18,14 +18,14 @@
 						</h1>
 						<small class="text-muted">Hour</small>
 					</div>
-					<div class="p2 bd-highlight" id="countdownMins">
-						<h1 id="countdown">
+					<div class="p2 bd-highlight" id="countdown">
+						<h1 id="countdownMins">
 
 						</h1>
 						<small class="text-muted">Min</small>
 					</div>
-					<div class="p2 bd-highlight" id="countdownSecs">
-						<h1 id="countdown">
+					<div class="p2 bd-highlight" id="countdown">
+						<h1 id="countdownSecs">
 
 						</h1>
 						<small class="text-muted">Sec</small>
