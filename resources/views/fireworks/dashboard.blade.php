@@ -22,13 +22,13 @@
 						<h1 id="countdownMins">
 
 						</h1>
-						<small class="text-muted fs-6 fw-bold">Minutes</small>
+						<small class="text-info fs-6 fw-bold">Minutes</small>
 					</div>
 					<div class="p2 bd-highlight" id="countdown">
 						<h1 id="countdownSecs">
 
 						</h1>
-						<small class="text-muted fs-6 fw-bold">Seconds</small>
+						<small class="text-info fs-6 fw-bold">Seconds</small>
 					</div>
 				</div>
 				<h1>Happy New Year</h1>
