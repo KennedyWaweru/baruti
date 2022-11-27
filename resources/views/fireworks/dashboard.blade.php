@@ -6,14 +6,14 @@
 			<div class="p-4 w-100 h-100 rounded-3 border bg-dark">
 				{{-- <h1 id="countdown"></h1> --}}
 				<div class="d-flex flex-row justify-content-evenly bd-highlight mb-3">
-					<div class="p2">
-						<h1 id="countdown">
+					<div class="p2 countdown">
+						<h1 id="countdownDays">
 
 						</h1>
 						<small class="text-muted">Day</small>
 					</div>
-					<div class="p2" id="countdownHours">
-						<h1 id="countdown">
+					<div class="p2" id="countdown">
+						<h1 id="countdownHours">
 
 						</h1>
 						<small class="text-muted">Hour</small>
