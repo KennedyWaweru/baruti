@@ -10,13 +10,13 @@
 						<h1 id="countdownDays">
 
 						</h1>
-						<small class="text-purple fs-6 fw-bold">Days</small>
+						<small class="text-info fs-6 fw-bold">Days</small>
 					</div>
 					<div class="p2" id="countdown">
 						<h1 id="countdownHours">
 
 						</h1>
-						<small class="text-purple fs-6 fw-bold">Hours</small>
+						<small class="text-info fs-6 fw-bold">Hours</small>
 					</div>
 					<div class="p2 bd-highlight" id="countdown">
 						<h1 id="countdownMins">
