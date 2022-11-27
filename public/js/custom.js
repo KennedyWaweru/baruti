@@ -23,9 +23,12 @@ function countdown(){
 	const mins_to_display = Math.floor(rem_mins);
 	const secs_to_display = Math.floor(rem_secs);
 
-	document.getElementById('countdown').innerHTML =days_to_display+":"+hours_to_display+":"+mins_to_display+":"+secs_to_display;
+	//document.getElementById('countdown').innerHTML =days_to_display+":"+hours_to_display+":"+mins_to_display+":"+secs_to_display;
 
 	document.getElementById('countdownDays').innerHTML = days_to_display;
+	document.getElementById('countdownHours').innerHTML = hours_to_display;
+	document.getElementById('countdownMins').innerHTML = mins_to_display;
+	document.getElementById('countdownSecs').innerHTML = secs_to_display;
 
 }
 

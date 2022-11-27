@@ -4,17 +4,32 @@
 	<div class="page-header text-center">
 		<div id="heading-text">
 			<div class="p-4 w-100 h-100 rounded-3 border bg-dark">
-				<h1 id="countdown"></h1>
-				<div class="d-flex flex-row justify-content-evenly bd-highlight mb-3 countdown">
-					<div class="p2 bd-highlight">
-						<h1 id="countdownDays">
+				{{-- <h1 id="countdown"></h1> --}}
+				<div class="d-flex flex-row justify-content-evenly bd-highlight mb-3">
+					<div class="p2">
+						<h1 id="countdown">
 
 						</h1>
-						<small class="text-muted">Days</small>
+						<small class="text-muted">Day</small>
 					</div>
-					<div class="p2 bd-highlight" id="countdownHours">Flex Item</div>
-					<div class="p2 bd-highlight" id="countdownMins">Flex Item</div>
-					<div class="p2 bd-highlight" id="countdownSecs">Flex Item</div>
+					<div class="p2" id="countdownHours">
+						<h1 id="countdown">
+
+						</h1>
+						<small class="text-muted">Hour</small>
+					</div>
+					<div class="p2 bd-highlight" id="countdownMins">
+						<h1 id="countdown">
+
+						</h1>
+						<small class="text-muted">Min</small>
+					</div>
+					<div class="p2 bd-highlight" id="countdownSecs">
+						<h1 id="countdown">
+
+						</h1>
+						<small class="text-muted">Sec</small>
+					</div>
 				</div>
 				<h1>Happy New Year</h1>
 			</div>
