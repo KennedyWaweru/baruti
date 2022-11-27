@@ -25,6 +25,7 @@ function countdown(){
 
 	document.getElementById('countdown').innerHTML =days_to_display+":"+hours_to_display+":"+mins_to_display+":"+secs_to_display;
 
+	document.getElementById('countdownDays').innerHTML = days_to_display;
 
 }
 
