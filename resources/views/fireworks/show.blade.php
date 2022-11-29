@@ -2,7 +2,7 @@
 
 @section('styles')
 	<style>
-		.color-effects{
+		.color-effect{
 			border-radius: 50%; /* make it circular shape */
 			height: 16px;
 			width: 16px;
