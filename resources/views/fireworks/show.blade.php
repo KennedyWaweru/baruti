@@ -1,5 +1,14 @@
 @extends('layouts.master')
 
+@section('styles')
+	<style>
+		.color-effects{
+			border-radius: 50%; /* make it circular shape */
+			height: 16px;
+			width: 16px;
+		}
+	</style>
+@endsection 
 
 @section('content')
 <div class="container">
@@ -63,9 +72,6 @@
 					<img src="{{asset('images/ball-bullet-rocket.jpg')}}" alt="" class="img-fluid">
 				@endisset
 				
-				{{--<img src="{{asset('images/ball-bullet-rocket.jpg')}}" alt="" class="img-fluid">--}}
-				{{-- <img src="{{env('AWS_BUCKET_URL').'Mars-attack.jpeg'}}" alt="" class="img-fluid"> --}}
-
 				
 			</div>
 			<div class="col-md-4 col-sm-12">
@@ -83,9 +89,13 @@
 								@php
 									$colors_json = json_decode($firework->effect_colors);
 								@endphp
-								@foreach($colors_json as $color)
-									{{$color}} &nbsp;
-								@endforeach
+
+								<div class="d-flex">
+									@foreach($colors_json as $color)
+										<div class="color-effect" style="background: {{$color}}" data-toggle="tooltip" title="{{$color}}"></div>
+									@endforeach
+								</div>
+								
 							@endisset
 						</li>
 						<li class="list-group-item">Height (meters): &nbsp; {{$firework->height_altitude}}</li>
