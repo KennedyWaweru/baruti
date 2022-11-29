@@ -56,17 +56,17 @@
 							$images_json = json_decode($firework->images);
 						@endphp
 						{{--<img src="{{asset($firework->image_url)}}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail"> --}}
-						<img src="{{ env('AWS_BUCKET_URL').$firework->image_url }}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail">
+						<img src="{{ env('AWS_S3_CLOUDFRONT_URL').$firework->image_url }}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail">
 						
 						@foreach($images_json as $img)
 						{{-- <img src="{{asset($img)}}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail"> --}}
-						<img src="{{env('AWS_BUCKET_URL').$img}}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail">
+						<img src="{{env('AWS_S3_CLOUDFRONT_URL').$img}}" alt="{{$firework->name}}" onclick="showImg(this);" class="img-fluid my-2" id="thumbnail">
 						
 						@endforeach
 					</div>
 					<div class="col-9">
 						{{-- <img src="{{asset($firework->image_url)}}" alt="{{$firework->name}}" class="img-fluid" id="expandedImg"> --}}
-						<img src="{{env('AWS_BUCKET_URL').$firework->image_url}}" alt="{{$firework->name}}" class="img-fluid" id="expandedImg">
+						<img src="{{env('AWS_S3_CLOUDFRONT_URL').$firework->image_url}}" alt="{{$firework->name}}" class="img-fluid" id="expandedImg">
 					</div>
 				</div>
 				@else

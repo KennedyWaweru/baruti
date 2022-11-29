@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-6" id="thumb-div">
           {{-- <img src="{{asset($cart_product_image)}}" alt="" class="img-fluid img-thumbnail"> --}}
-          <img src="{{env('AWS_BUCKET_URL').$cart_product_image}}" alt="{{$cart_product_name}}" class="img-fluid img-thumbnail">
+          <img src="{{env('AWS_S3_CLOUDFRONT_URL').$cart_product_image}}" alt="{{$cart_product_name}}" class="img-fluid img-thumbnail">
       </div>
       <div class="col-6">
           <h6 class="my-title"><strong>{{$cart_product_name}}</strong></h6>
