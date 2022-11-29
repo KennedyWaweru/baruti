@@ -21,9 +21,9 @@
                     $products_stock[]=$product->stock;
                     //$aws_url = $_ENV['AWS_BUCKET_URL'].$product->image_url;
                     /* TODO
-                    USE CLOUFRONT URL TO SERVE STATIC CONTENT INSTEAD OF S3
+                    USE env variable for CLOUFRONT URL TO SERVE STATIC CONTENT INSTEAD OF S3
                     */
-                    $aws_url = 'https://baruti.s3.eu-central-1.amazonaws.com/'.$product->image_url;
+                    $aws_url = 'https://d34dnz415a0ab2.cloudfront.net/'.$product->image_url;
                     $product_image="<div class=\"col-sm-6\">\n<img src=\"$aws_url\" alt=\"\" class=\"img-fluid rounded-start\">\n\t</div>";
                     $package_images[]=$product_image;
                 }
