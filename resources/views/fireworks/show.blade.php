@@ -6,6 +6,7 @@
 			border-radius: 50%; /* make it circular shape */
 			height: 16px;
 			width: 16px;
+			margin: 5px;
 		}
 	</style>
 @endsection 
