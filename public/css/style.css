@@ -29,7 +29,7 @@ body{
 	font-size: 1rem;
 }
 .main .page-header{
-	background-image: url('../images/moon-stars.jpg');
+	background-image: url('https://d34dnz415a0ab2.cloudfront.net/moon-stars.jpg');
 
 	/* background image is centered horizontally and vertically */
 	background-position: center center;
