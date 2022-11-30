@@ -107,6 +107,9 @@
 		<section class="details my-4">
 			<div class="row">
 				<h2 class="text-center text-white">Shop With Us</h2>
+				<!-- TODO
+					Use Bullets instead of paragraphs
+				-->
 				<div class="col-md-4 my-2">
 					<div class="rounded-3 h-100 p-4 border-info bg-light">
 						<h2 class="text-center">

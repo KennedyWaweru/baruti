@@ -15,8 +15,7 @@
   
   <!-- Your custom styles (optional) -->
   <link href="{{asset('css/style.css')}}" rel="stylesheet">
-{{--  <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"> --}}
- {{-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> --}}
+
  
 	@yield('styles')
 	@yield('scripts')

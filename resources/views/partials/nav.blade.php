@@ -15,7 +15,7 @@
           <div class="navbar-nav">
             {{-- <a href="/" class="nav-link active" aria-current="page">Home</a> --}}
             <a href="/fireworks" class="nav-link">Fireworks</a>
-            <a href="#" class="nav-link">Resources</a>
+            <a href="/resources" class="nav-link">Resources</a>
           </div>
           
         </div>
