@@ -63,3 +63,6 @@ Route::get('authorized/facebook/callback', 'FacebookController@handleFacebookCal
 
 /* Page privacy policy */
 Route::view('/privacy_policy', 'privacy_policy');
+
+/* Resources/ Firework Education page */
+Route::view('/resources', 'firework_education');
