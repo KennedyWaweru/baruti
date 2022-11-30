@@ -7,7 +7,7 @@
 
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="#" class="nav-link px-2  text-danger">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2  text-danger">Privacy Policy</a></li>
+      <li class="nav-item"><a href="/privacy_policy" class="nav-link px-2  text-danger">Privacy Policy</a></li>
       {{-- <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li> --}}
