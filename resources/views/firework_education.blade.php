@@ -67,7 +67,7 @@
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header fs-2" id="panelsStayOpen-headingSix">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
                 Roman Candle Safety
               </button>
             </h2>
