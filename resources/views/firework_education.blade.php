@@ -26,7 +26,7 @@
           <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
             <div class="accordion-body fs-4">
               <h3 class="text-center fs-3 text-info">How to ignite a firework rocket</h3>
-              <img src="https://d34dnz415a0ab2.cloudfront.net/lighting-rocket.jpg" alt="How to light a Rocket">
+              <img class="img-fluid" src="https://d34dnz415a0ab2.cloudfront.net/lighting-rocket.jpg" alt="How to light a Rocket">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item"><strong>Make sure you have a clear, open space to light.</strong></li>
                 <li class="list-group-item">After you light the fuse move a safe distance away</li>
@@ -43,7 +43,19 @@
           </h2>
           <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
             <div class="accordion-body fs-4">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              <h3 class="text-center fs-3 text-info">How to ignite an aerial repeater</h3>
+              <img class="img-fluid" src="https://d34dnz415a0ab2.cloudfront.net/ignite-cake-fuse.jpg" alt="How to light a Rocket">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <strong>Set up your repeaters on a hard flat, level surface.</strong>
+                </li>
+                <li class="list-group-item">
+                  Make sure you have a clear, open space to shoot with 150 feet distance between your launch site and the audience
+                </li>
+                <li class="list-group-item">
+                  After you light the fuse move a minimum of 20 feet from the repeater.
+                </li>  
+              </ul>
             </div>
           </div>
         </div>
@@ -55,7 +67,19 @@
             </h2>
             <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
               <div class="accordion-body fs-4">
-                <strong>This is the fourth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              <h3 class="text-center fs-3 text-info">How to ignite a firework fountain</h3>
+              <img class="img-fluid" src="https://d34dnz415a0ab2.cloudfront.net/fountain-fuse-nozzle.png" alt="How to light a fountain firework">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  {{-- TODO --}}
+                </li>
+                <li class="list-group-item">
+                  {{-- TODO --}}
+                </li>
+                <li class="list-group-item">
+                  {{-- TODO --}}
+                </li>  
+              </ul>
               </div>
             </div>
         </div>
@@ -67,7 +91,19 @@
             </h2>
             <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
               <div class="accordion-body fs-4">
-                <strong>This is the fifth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <h3 class="text-center fs-3 text-info">How to ignite a Sparkler</h3>
+              <img class="img-fluid" src="https://d34dnz415a0ab2.cloudfront.net/lighting-sparklers.jpg" alt="How to light a Sparkler">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  {{-- TODO --}}
+                </li>
+                <li class="list-group-item">
+                  {{-- TODO --}}
+                </li>
+                <li class="list-group-item">
+                  {{-- TODO --}}
+                </li>  
+              </ul>
               </div>
             </div>
           </div>
@@ -79,7 +115,27 @@
             </h2>
             <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
               <div class="accordion-body fs-4">
-                <strong>This is the sixth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              <h3 class="text-center fs-3 text-info">How to ignite a Roman Candle</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <img class="img-fluid" src="https://d34dnz415a0ab2.cloudfront.net/ignite-candle.jpg" alt="How to light a Roman Candle">
+                </div>
+                <div class="col-md-6">
+                  <img class="img-fluid" src="https://d34dnz415a0ab2.cloudfront.net/lighting-up-roman-candles.jpg" alt="How to handle a lit Roman Candle">
+                </div>
+              </div>
+              
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  {{-- TODO --}}
+                </li>
+                <li class="list-group-item">
+                  {{-- TODO --}}
+                </li>
+                <li class="list-group-item">
+                  {{-- TODO --}}
+                </li>  
+              </ul>
               </div>
             </div>
           </div>
