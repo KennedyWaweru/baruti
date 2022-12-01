@@ -25,7 +25,13 @@
           </h2>
           <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
             <div class="accordion-body fs-4">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              <h3 class="text-center fs-3 text-info">How to ignite a firework rocket</h3>
+              <img src="https://d34dnz415a0ab2.cloudfront.net/lighting-rocket.jpg" alt="How to light a Rocket">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Make sure you have a clear, open space to light.</strong></li>
+                <li class="list-group-item">After you light the fuse move a safe distance away</li>
+                <li class="list-group-item">Make sure your audience is a safe distance away</li>
+              </ul>
             </div>
           </div>
         </div>
