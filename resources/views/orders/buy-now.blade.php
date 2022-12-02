@@ -26,7 +26,7 @@
 		</div>
 		 <div class="col-md-5 col-sm-12 bg-success text-white p-3">
 		 	{{-- Package/product thats on Buy Now --}}
-            <h1>BUY NOW</h1>
+            
              @livewire('buy-now-summary', ['item_slug'=>$package->slug])
 	 	</div>
 	</div>
