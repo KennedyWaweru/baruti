@@ -22,7 +22,7 @@
 					</ul>
 				</div>
 			</div>
-			@livewire('order', ['buyNow'=>True])
+			@livewire('order', ['buyNow'=>True,'itemSlug'=>$package->slug])
 		</div>
 		 <div class="col-md-5 col-sm-12 bg-success text-white p-3">
 		 	{{-- Package/product thats on Buy Now --}}

@@ -51,11 +51,12 @@
         {{Form::select('delivery_day',['1'=>'Today','2'=>'Tomorrow'],'', ['class'=>'form-select'])}}
     </div>
     
-    @if($buyNow)
+    @isset($buyNow)
     {{--
         Add a hidden form field to indicate whether the order is Buy Now or normal cart order
     --}}
-    <input type="hidden" value="{{True}}" hidden class="form-control hidden" name="buyNow">
+    
+    <input type="hidden" value="{{$itemSlug}}" hidden class="form-control hidden" name="itemSlug">
     <div class="col-12 text-center">
         {{Form::submit('Buy Now',['class'=>'btn btn-info btn-lg form-control my-3'])}}
         {!! Form::close() !!}

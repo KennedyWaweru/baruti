@@ -35,13 +35,7 @@ class OrderController extends Controller
             'location' => 'required',
             'delivery_day' => 'required',
         ]);
-        
-        // check if order is buyNow or normal cart order
-        if($request->buyNow){
-            dd('Buy Now');
-        }
-        
-        // Normal Cart Order 
+            
         $cart_content = Cart::content();
         if(collect($cart_content)->isEmpty()){
             return redirect()->back()->with('error','Cart is Empty');
@@ -125,7 +119,7 @@ class OrderController extends Controller
             'delivery_day' => 'required',
         ]);
 
-        dd($package);
+        
         // Create a new Order
         $order = new Order;
 
@@ -143,7 +137,8 @@ class OrderController extends Controller
         $order->save(); 
         $order_id = $order->id;
 
-        //$package = Package::where('slug',$cart_item->id)->value('id');
+        $package = Package::where('slug',$request->itemSlug)->value('id');
+        dd($package);
         //$package_items[$package] = ['quantity'=>$cart_item->qty];
     }
 
