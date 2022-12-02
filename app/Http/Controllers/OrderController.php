@@ -36,7 +36,12 @@ class OrderController extends Controller
             'delivery_day' => 'required',
         ]);
         
+        // check if order is buyNow or normal cart order
+        if($request->buyNow){
+            dd('Buy Now');
+        }
         
+        // Normal Cart Order 
         $cart_content = Cart::content();
         if(collect($cart_content)->isEmpty()){
             return redirect()->back()->with('error','Cart is Empty');
