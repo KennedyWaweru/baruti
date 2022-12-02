@@ -4,7 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Http;use Illuminate\Support\Facades\Cookie;
+
 
 use AfricasTalking\SDK\AfricasTalking;
 
@@ -121,6 +122,7 @@ class OrderPayment extends Component
                 }
                 if($order->save()){
                     Cart::destroy();
+                    Cookie::forget('order_id');
                     $this->emit('cart-updated');
                 }
                 $this->dispatchBrowserEvent('paymentSuccessful');
