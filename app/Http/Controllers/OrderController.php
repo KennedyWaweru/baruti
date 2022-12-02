@@ -55,7 +55,7 @@ class OrderController extends Controller
             $amount_to_charge = $cart_total;
         }
 
-        if(Cache::has('order_id')){
+        if(Cookie::has('order_id')){
             $order=Order::findOrFail(cache('order_id'));
         }else{
             $order = new Order;
@@ -105,12 +105,7 @@ class OrderController extends Controller
         Cookie::queue('order_location', $request->input('location'), 120);
         Cookie::queue('order_id', $order_id, 120);
 
-        /*cache(['order_f_name' => $request->input('first_name')],now()->addMinutes(60));
-        cache(['order_s_name'=>$request->input('second_name')], now()->addMinutes(60));
-        cache(['order_phone'=>$request->input('phone')], now()->addMinutes(60));
-        cache(['order_email'=>$request->input('email')], now()->addMinutes(60));
-        cache(['order_location'=>$request->input('location')], now()->addMinutes(60));
-        cache(['order_id'=>$order_id], now()->addMinutes(60));*/
+        
 
         return view('orders.payment',['form_details'=>$request->input(),'order_id'=>$order_id]);
     }
@@ -118,11 +113,7 @@ class OrderController extends Controller
     public function show(Order $order){
 
         return view('orders.show',['order'=>$order]);
-        /*$orders = Order::orderByDesc('id')->get();
-        foreach($orders as $order){
-
-            var_dump($order->name," ",$order->location,"<hr>");
-        }*/
+       
     }
 
     public function index(){
