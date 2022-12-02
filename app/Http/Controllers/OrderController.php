@@ -53,7 +53,7 @@ class OrderController extends Controller
             $delivery_fee = 0;
             $amount_to_charge = $cart_total;
         }
-
+        dd('Here Now');
         if(Cookie::has('order_id')){
             $order=Order::findOrFail(cache('order_id'));
         }else{
@@ -103,8 +103,6 @@ class OrderController extends Controller
         Cookie::queue('order_email',  $request->input('email'), 120);
         Cookie::queue('order_location', $request->input('location'), 120);
         Cookie::queue('order_id', $order_id, 120);
-
-        dd('Reaches here');
 
         return view('orders.payment',['form_details'=>$request->input(),'order_id'=>$order_id]);
     }
