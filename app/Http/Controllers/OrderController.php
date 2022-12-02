@@ -54,7 +54,7 @@ class OrderController extends Controller
             $amount_to_charge = $cart_total;
         }
         
-        dd('Here Now after save');
+        //dd('Here Now after save');
 
         if(Cookie::has('order_id')){
             //$order=Order::findOrFail(cache('order_id'));
