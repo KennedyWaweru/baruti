@@ -55,9 +55,10 @@ class OrderController extends Controller
         }
         
         dd('Here Now after save');
-        
+
         if(Cookie::has('order_id')){
-            $order=Order::findOrFail(cache('order_id'));
+            //$order=Order::findOrFail(cache('order_id'));
+            dd('Found in Cookies');
         }else{
             $order = new Order;
         }
