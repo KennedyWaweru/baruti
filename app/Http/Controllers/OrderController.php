@@ -61,7 +61,7 @@ class OrderController extends Controller
         }
 
         if(Cookie::has('order_id')){
-            $order=Order::findOrFail(cache('order_id'));
+            $order=Order::findOrFail(cookie('order_id'));
         }else{
             $order = new Order;
         }
@@ -113,6 +113,38 @@ class OrderController extends Controller
         
 
         return view('orders.payment',['form_details'=>$request->input(),'order_id'=>$order_id]);
+    }
+
+    public function payNow(Request $request, Package $package){
+        $this->validate($request,[
+            'first_name'=>'string|required',
+            'second_name'=>'string|required',
+            'phone' => ['required','digits:10','starts_with:0','string','regex:/\d{10}$/'],
+            'email' => 'email',
+            'location' => 'required',
+            'delivery_day' => 'required',
+        ]);
+
+        dd($package);
+        // Create a new Order
+        $order = new Order;
+
+        $user_name = $request->input('first_name').' '.$request->input('second_name');
+        $order->name=$user_name;
+        $order->location=$request->input('location');
+        $order->phone=$request->input('phone');
+        $order->user_id='1';
+        $order->amount=$cart_total;
+        $order->delivery_fee=$delivery_fee;
+        $order->delivery= $request->input('delivery_day') === 1 
+                            ? date('Y/m/d')
+                            : date('Y/m/d',strtotime('tomorrow'));
+
+        $order->save(); 
+        $order_id = $order->id;
+
+        //$package = Package::where('slug',$cart_item->id)->value('id');
+        //$package_items[$package] = ['quantity'=>$cart_item->qty];
     }
 
     public function show(Order $order){

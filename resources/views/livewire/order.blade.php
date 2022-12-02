@@ -1,7 +1,11 @@
 <div>
 
-
+    @if($buyNow)
+    {!! Form::open(['action' => 'OrderController@payNow', 'method'=>'POST', 'enctype'=>'multipart/form-data', 'class'=>'row g-3']) !!}
+    @else 
     {!! Form::open(['action' => 'OrderController@paymentOrder', 'method'=>'POST', 'enctype'=>'multipart/form-data', 'class'=>'row g-3']) !!}
+    @endif
+    
     <div class="col-md-6">
         <label for="first_name" class="form-label">First Name</label>
         @empty(old('first_name'))
@@ -53,7 +57,7 @@
     {{--
         Add a hidden form field to indicate whether the order is Buy Now or normal cart order
     --}}
-    <input type="hidden" value="{{True}}}" hidden class="form-control hidden" name="buyNow">
+    <input type="hidden" value="{{True}}" hidden class="form-control hidden" name="buyNow">
     <div class="col-12 text-center">
         {{Form::submit('Buy Now',['class'=>'btn btn-info btn-lg form-control my-3'])}}
         {!! Form::close() !!}
