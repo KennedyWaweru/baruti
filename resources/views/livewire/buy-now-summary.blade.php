@@ -1,8 +1,8 @@
 <div>
     {{-- Do your work, then step back. --}}
     @isset($package)
-             
-             <div class="table-responsive-sm cart-summary">
+             {{$package}}
+             {{-- <div class="table-responsive-sm cart-summary">
                 <h3 class="text-center fs-4 text-primary p-2 bg-light">{{$package->name}}</h3>
                  <table class="table table-success table-striped table-hover">
                      <thead class="table-dark">
@@ -51,5 +51,6 @@
      
                 </table>
             </div> 
+            --}}
             @endisset
 </div>
