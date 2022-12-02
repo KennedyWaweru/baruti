@@ -138,8 +138,11 @@ class OrderController extends Controller
         $order_id = $order->id;
 
         $package = Package::where('slug',$request->itemSlug)->value('id');
-        dd($package);
+        $package_item[$package] = ['quantity'=>1];
+        $order->packages()->sync($package_item);
+        //dd($package);
         //$package_items[$package] = ['quantity'=>$cart_item->qty];
+        var_dump($order);
     }
 
     public function show(Order $order){
