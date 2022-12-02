@@ -37,6 +37,7 @@
                          </tr>
                      </thead>
                      <tbody>
+                        {{$package}}
                         @foreach($package->fireworks as $order_firework)
                             <tr>
                                 <td>{{$order_firework->name}}</td>
