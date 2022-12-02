@@ -45,7 +45,7 @@
                     <hr class="my-2 text-success">
                     <div class="row text-center">
                         <div class="col-sm-4 my-1">
-                            <a href="" class="btn btn-outline-primary" role="button">View</a>
+                            <a href="/order" class="btn btn-outline-primary" role="button">Buy Now</a>
                         </div>
                         <div class="col-sm-4 my-1">
                             <form action="">
@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-sm-4 my-1">
                             <a wire:click.prevent="addPackageToCart('{{$package_slug}}')" role="button" class="btn btn-outline-primary">
-                                <i class="fas fa-cart-plus"></i>
+                                <i class="fas fa-cart-plus"></i> <small style="font-size: 0.8rem;">Add to Cart</small>
                             </a>
 
                         </div>
