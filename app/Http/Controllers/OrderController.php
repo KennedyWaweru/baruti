@@ -128,18 +128,21 @@ class OrderController extends Controller
         $order->location=$request->input('location');
         $order->phone=$request->input('phone');
         $order->user_id='1';
-        $order->amount=10;
+        
         $order->delivery_fee=500;
         $order->delivery= $request->input('delivery_day') === 1 
                             ? date('Y/m/d')
                             : date('Y/m/d',strtotime('tomorrow'));
 
+        $package = Package::where('slug',$request->itemSlug)->value('id');
+        $package_price = Package::where('slug',$request->itemSlug)->value('price');
+        $package_item[$package] = ['quantity'=>1];
+
+        $order->amount = $package_price;
+        $order->packages()->sync($package_item);
+
         $order->save(); 
         $order_id = $order->id;
-
-        $package = Package::where('slug',$request->itemSlug)->value('id');
-        $package_item[$package] = ['quantity'=>1];
-        $order->packages()->sync($package_item);
         //dd($package);
         //$package_items[$package] = ['quantity'=>$cart_item->qty];
         var_dump($order);
