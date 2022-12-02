@@ -37,7 +37,7 @@
                            </td>
                         </tr>
                         <div class="alert alert-warning fs-6" role="alert">
-                            Orders below Kshs 1,000 will incur an extra Kshs 500 Delivery Fee!
+                            Orders below Kshs 2,000 will incur an extra Kshs 500 Delivery Fee!
                       </div>
                         @else
                         <tr class="fw-bold">
