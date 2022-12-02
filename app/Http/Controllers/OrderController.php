@@ -143,7 +143,7 @@ class OrderController extends Controller
         $order->packages()->sync($package_item);
         $order_id = $order->id;
        
-        return view('orders.payment',['form_details'=>$request->input(),'order_id'=>$order_id, 'buyNow'=>True]);
+        return view('orders.payment',['form_details'=>$request->input(),'order_id'=>$order_id, 'buyNow'=>True,'itemSlug'=>$request->itemSlug]);
     }
 
     public function show(Order $order){
