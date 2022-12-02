@@ -40,6 +40,9 @@ Route::get('orders','OrderController@index')->name('order_list');
 Route::get('orders/{order}','OrderController@show')->name('order_page');
 Route::post('order_completed/{order}','OrderController@complete')->name('order_completed');
 Route::get('buy_now/{package}', 'OrderController@buyNow')->name('buy_now');
+Route::get('pay_now', function(){
+  return redirect()->back();
+})
 Route::post('pay_now', 'OrderController@payNow')->name('pay_now');
 Route::get('payment',function(){
   return redirect()->back();

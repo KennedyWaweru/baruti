@@ -128,8 +128,8 @@ class OrderController extends Controller
         $order->location=$request->input('location');
         $order->phone=$request->input('phone');
         $order->user_id='1';
-        $order->amount=$cart_total;
-        $order->delivery_fee=$delivery_fee;
+        $order->amount=10;
+        $order->delivery_fee=500;
         $order->delivery= $request->input('delivery_day') === 1 
                             ? date('Y/m/d')
                             : date('Y/m/d',strtotime('tomorrow'));
