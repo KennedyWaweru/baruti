@@ -61,7 +61,7 @@ class OrderController extends Controller
         }
 
         if(Cookie::has('order_id')){
-            $order=Order::findOrFail(cookie('order_id'));
+            $order=Order::findOrFail(cache('order_id'));
         }else{
             $order = new Order;
         }

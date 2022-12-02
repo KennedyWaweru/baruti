@@ -1,10 +1,8 @@
 <div>
 
-    @if($buyNow)
-    {!! Form::open(['action' => 'OrderController@payNow', 'method'=>'POST', 'enctype'=>'multipart/form-data', 'class'=>'row g-3']) !!}
-    @else 
+   
     {!! Form::open(['action' => 'OrderController@paymentOrder', 'method'=>'POST', 'enctype'=>'multipart/form-data', 'class'=>'row g-3']) !!}
-    @endif
+   
     
     <div class="col-md-6">
         <label for="first_name" class="form-label">First Name</label>
