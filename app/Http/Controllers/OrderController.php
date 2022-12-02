@@ -106,7 +106,7 @@ class OrderController extends Controller
 
         
 
-        return view('orders.payment',['form_details'=>$request->input(),'order_id'=>$order_id]);
+        return view('orders.payment',['form_details'=>$request->input(),'order_id'=>$order_id,'buyNow'=>False]);
     }
 
     public function payNow(Request $request){
