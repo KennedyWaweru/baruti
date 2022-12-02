@@ -56,7 +56,7 @@
                              <tr class="fw-bold">
                                  <td>Total</td>
                                  <td>
-                                    {{$cart_total}}
+                                    {{number_format($package->price)}}
                                 </td>
                              </tr>
                              <div class="alert alert-warning fs-6" role="alert">
