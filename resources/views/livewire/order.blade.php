@@ -1,7 +1,7 @@
 <div>
 
    
-    {!! Form::open(['action' => 'OrderController@paymentOrder', 'method'=>'POST', 'enctype'=>'multipart/form-data', 'class'=>'row g-3']) !!}
+    {!! Form::open(['action' => $buyNow ? 'OrderController@payNow': 'OrderController@paymentOrder', 'method'=>'POST', 'enctype'=>'multipart/form-data', 'class'=>'row g-3']) !!}
    
     
     <div class="col-md-6">
