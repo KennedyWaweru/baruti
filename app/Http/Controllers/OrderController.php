@@ -21,6 +21,11 @@ class OrderController extends Controller
         return view('orders.create');
     }
 
+    // take client direct to checkout page
+    public function buyNow(){
+        return view('orders.buy-now');
+    }
+
     public function paymentOrder(Request $request){
         $this->validate($request,[
             'first_name'=>'string|required',
@@ -126,6 +131,7 @@ class OrderController extends Controller
     }
 
     public function complete(Request $request, Order $order){
+        /* Confirm when the product has been delivered to the customer */
         if($request->input('delivery_status')!=='on'){
             return redirect()->back()->with('error',"Delivery $order->id not complete");
         }

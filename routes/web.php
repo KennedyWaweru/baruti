@@ -39,6 +39,7 @@ Route::get('order','OrderController@create')->name('order');
 Route::get('orders','OrderController@index')->name('order_list');
 Route::get('orders/{order}','OrderController@show')->name('order_page');
 Route::post('order_completed/{order}','OrderController@complete')->name('order_completed');
+Route::get('buy_now', 'OrderController@buyNow')->name('buy_now');
 Route::get('payment',function(){
   return redirect()->back();
 });

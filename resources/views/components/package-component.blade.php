@@ -45,7 +45,7 @@
                     <hr class="my-2 text-success">
                     <div class="row text-center">
                         <div class="col-sm-4 my-1">
-                            <a href="{{route('order')}}" class="btn btn-outline-primary" role="button">Buy Now</a>
+                            <a href="{{route('buy-now')}}" class="btn btn-outline-primary" role="button">Buy Now</a>
                         </div>
                         <div class="col-sm-4 my-1">
                             <form action="">
