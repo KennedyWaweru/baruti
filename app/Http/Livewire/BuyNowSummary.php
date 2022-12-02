@@ -9,8 +9,9 @@ use App\Package;
 class BuyNowSummary extends Component
 {
     public $package;
+    public $item_slug;
     public function mount(){
-        $this->$package = Package::findOrFail($package);
+        $this->$package = Package::findOrFail($this->item_slug);
     }
     public function render()
     {

@@ -32,6 +32,7 @@
         <div class="col-md-5 col-sm-12 bg-success text-white p-3">
             @isset($buyNow)
                 <h2 class="text-center fs-3 text-dark">Buy Now</h2>
+                @livewire('buy-now-summary',['item_slug'=>$itemSlug])
             @else
                 @livewire('cart-summary')
             @endisset
