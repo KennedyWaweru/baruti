@@ -8,6 +8,7 @@ class Order extends Component
 {
 
     public $buyNow = False;
+    public $itemSlug;
     
     public function render()
     {
