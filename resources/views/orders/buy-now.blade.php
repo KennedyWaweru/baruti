@@ -26,7 +26,56 @@
 		</div>
 		 <div class="col-md-5 col-sm-12 bg-success text-white p-3">
 		 	{{-- Package/product thats on Buy Now --}}
-            Buy Now Item
+             @isset($package)
+             <div class="table-responsive-sm cart-summary">
+                 <table class="table table-success table-striped table-hover">
+                     <thead class="table-dark">
+                         <tr>
+                             <td>Item</td>
+                             <td>Price</td>
+                         </tr>
+                     </thead>
+                     <tbody>
+                        @foreach($package->fireworks as $order_firework)
+                            <tr>
+                                <td>{{$order_firework->name}}</td>
+                                {{--<td>{{$order_firework->pivot->quantity}}</td>--}}
+                                <td>{{$order_firework->pivot->quantity}}</td>
+                            </tr>
+						@endforeach
+                       
+                         <tfoot>
+                             @if($cart_total < 1000)
+                             <tr class="fw-bold">
+                                 <td>Delivery Fee</td>
+                                 <td>
+                                     500
+                                    {{-- {{$cart_total}} --}}
+                                </td>
+                             </tr>
+                             <tr class="fw-bold">
+                                 <td>Total</td>
+                                 <td>
+                                    {{$cart_total}}
+                                </td>
+                             </tr>
+                             <div class="alert alert-warning fs-6" role="alert">
+                                 Orders below Kshs 2,000 will incur an extra Kshs 500 Delivery Fee!
+                           </div>
+                             @else
+                             <tr class="fw-bold">
+                                 <td>Total</td>
+                                 <td>
+                                    {{number_format($package->price)}}
+                                </td>
+                             </tr>
+                            @endif
+                        </tfoot>
+                     </tbody>
+     
+                </table>
+            </div>
+            @endisset
 	 	</div>
 	</div>
 </div>

@@ -22,8 +22,8 @@ class OrderController extends Controller
     }
 
     // take client direct to checkout page
-    public function buyNow(){
-        return view('orders.buy-now');
+    public function buyNow(Package $package){
+        return view('orders.buy-now', ['package'=>$package]);
     }
 
     public function paymentOrder(Request $request){
