@@ -63,7 +63,8 @@ class OrderController extends Controller
         }
         */
         
-        
+        // initialize new order instance
+        $order = new Order;
 
         $user_name = $request->input('first_name').' '.$request->input('second_name');
         $order->name=$user_name;
