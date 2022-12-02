@@ -6,6 +6,8 @@ use Livewire\Component;
 
 class Order extends Component
 {
+
+    public $buyNow = False;
     
     public function render()
     {
