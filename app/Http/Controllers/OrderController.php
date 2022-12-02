@@ -142,10 +142,7 @@ class OrderController extends Controller
 
         $order->packages()->sync($package_item);
         $order_id = $order->id;
-        //dd($package);
-        //$package_items[$package] = ['quantity'=>$cart_item->qty];
-        var_dump($order);
-
+       
         return view('orders.payment',['form_details'=>$request->input(),'order_id'=>$order_id, 'buyNow'=>True]);
     }
 
