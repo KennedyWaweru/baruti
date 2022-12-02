@@ -29,7 +29,7 @@
              @isset($package)
              
              <div class="table-responsive-sm cart-summary">
-                <h3 class="text-center fs-4">{{$package->name}}</h3>
+                <h3 class="text-center fs-4 text-primary">{{$package->name}}</h3>
                  <table class="table table-success table-striped table-hover">
                      <thead class="table-dark">
                          <tr>
@@ -38,7 +38,7 @@
                          </tr>
                      </thead>
                      <tbody>
-                        {{$package}}
+                       
                         @foreach($package->fireworks as $order_firework)
                             <tr>
                                 <td>{{$order_firework->name}}</td>
