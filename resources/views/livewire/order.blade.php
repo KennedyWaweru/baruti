@@ -52,7 +52,7 @@
         {{Form::submit('Submit',['class'=>'btn btn-primary btn-lg form-control my-3'])}}
         {!! Form::close() !!}
     </div>
-    @if('buyNow')
+    @if($buyNow)
         <h2>Buy Now</h2>
     @endif
 
