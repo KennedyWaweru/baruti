@@ -1,7 +1,7 @@
 <div>
     {{-- Do your work, then step back. --}}
     @isset($package)
-             {{$package}}
+            Package available
              {{-- <div class="table-responsive-sm cart-summary">
                 <h3 class="text-center fs-4 text-primary p-2 bg-light">{{$package->name}}</h3>
                  <table class="table table-success table-striped table-hover">
