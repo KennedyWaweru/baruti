@@ -35,7 +35,7 @@ class OrderController extends Controller
             'location' => 'required',
             'delivery_day' => 'required',
         ]);
-            
+        dd('Reaches here');
         $cart_content = Cart::content();
         if(collect($cart_content)->isEmpty()){
             return redirect()->back()->with('error','Cart is Empty');
