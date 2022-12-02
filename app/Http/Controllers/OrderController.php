@@ -145,6 +145,8 @@ class OrderController extends Controller
         //dd($package);
         //$package_items[$package] = ['quantity'=>$cart_item->qty];
         var_dump($order);
+
+        return view('orders.payment',['form_details'=>$request->input(),'order_id'=>$order_id, 'buyNow'=>True]);
     }
 
     public function show(Order $order){
