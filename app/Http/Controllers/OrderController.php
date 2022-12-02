@@ -128,7 +128,6 @@ class OrderController extends Controller
         $order->location=$request->input('location');
         $order->phone=$request->input('phone');
         $order->user_id='1';
-        
         $order->delivery_fee=500;
         $order->delivery= $request->input('delivery_day') === 1 
                             ? date('Y/m/d')
@@ -139,9 +138,9 @@ class OrderController extends Controller
         $package_item[$package] = ['quantity'=>1];
 
         $order->amount = $package_price;
-        $order->packages()->sync($package_item);
-
         $order->save(); 
+
+        $order->packages()->sync($package_item);
         $order_id = $order->id;
         //dd($package);
         //$package_items[$package] = ['quantity'=>$cart_item->qty];
