@@ -11,7 +11,7 @@ class BuyNowSummary extends Component
     public $package;
     public $item_slug;
     public function mount(){
-        $this->$package = Package::where('slug',$this->item_slug);
+        $this->package = Package::where('slug',$this->item_slug);
     }
     public function render()
     {
