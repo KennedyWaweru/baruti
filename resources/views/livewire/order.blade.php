@@ -51,7 +51,7 @@
         {{Form::select('delivery_day',['1'=>'Today','2'=>'Tomorrow'],'', ['class'=>'form-select'])}}
     </div>
     
-    @isset($buyNow)
+    @if($buyNow)
     {{--
         Add a hidden form field to indicate whether the order is Buy Now or normal cart order
     --}}
