@@ -27,8 +27,8 @@
 		 <div class="col-md-5 col-sm-12 bg-success text-white p-3">
 		 	{{-- Package/product thats on Buy Now --}}
              @isset($package)
-             <h1>Package is set</h1>
-             {{-- <div class="table-responsive-sm cart-summary">
+             
+             <div class="table-responsive-sm cart-summary">
                  <table class="table table-success table-striped table-hover">
                      <thead class="table-dark">
                          <tr>
@@ -45,7 +45,7 @@
 						@endforeach
                        
                          <tfoot>
-                             @if($cart_total < 1000)
+                             @if((int)$package->price < 1000)
                              <tr class="fw-bold">
                                  <td>Delivery Fee</td>
                                  <td>
@@ -74,7 +74,7 @@
                      </tbody>
      
                 </table>
-            </div> --}}
+            </div> 
             @endisset
 	 	</div>
 	</div>
