@@ -35,7 +35,7 @@ class OrderController extends Controller
             'location' => 'required',
             'delivery_day' => 'required',
         ]);
-        dd('Reaches here');
+        
         $cart_content = Cart::content();
         if(collect($cart_content)->isEmpty()){
             return redirect()->back()->with('error','Cart is Empty');
@@ -104,7 +104,7 @@ class OrderController extends Controller
         Cookie::queue('order_location', $request->input('location'), 120);
         Cookie::queue('order_id', $order_id, 120);
 
-        
+        dd('Reaches here');
 
         return view('orders.payment',['form_details'=>$request->input(),'order_id'=>$order_id]);
     }
