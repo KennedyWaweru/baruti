@@ -56,10 +56,11 @@ class OrderController extends Controller
         
         if(Cookie::has('order_id')){
             $order=Order::findOrFail(cache('order_id'));
-            dd($order);
         }else{
             $order = new Order;
         }
+        
+        dd('Here Now after save');
         
         $user_name = $request->input('first_name').' '.$request->input('second_name');
         $order->name=$user_name;
@@ -76,7 +77,7 @@ class OrderController extends Controller
         $order->save(); 
         $order_id = $order->id;
 
-        dd('Here Now after save');
+       
         $order_items = [];
         $package_items=[];
         foreach($cart_content as $cart_item){
