@@ -115,7 +115,7 @@ class OrderController extends Controller
         return view('orders.payment',['form_details'=>$request->input(),'order_id'=>$order_id]);
     }
 
-    public function payNow(Request $request, Package $package){
+    public function payNow(Request $request){
         $this->validate($request,[
             'first_name'=>'string|required',
             'second_name'=>'string|required',
