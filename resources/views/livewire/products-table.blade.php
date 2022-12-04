@@ -1,13 +1,17 @@
 <section class="featured-products">
     <div class="row">
+        <div class="col-md-8">
+            <h2 class="text-center text-white">Featured Products</h2>
+        </div>
+        <div class="col-md-4">
+            <a href="#" class="float-right fs-6 bg-info">
+                Sort by price
+                <span id="productSort">
+                    <i class="fa-solid fa-bars-sort fs-4"></i>
+                </span>
+            </a>
+        </div>
         
-        <h2 class="text-center text-white">Featured Products</h2>
-        <a href="#" class="float-right fs-6 bg-info">
-            Sort by price
-            <span id="productSort">
-                <i class="fa-solid fa-bars-sort fs-4"></i>
-            </span>
-        </a>
         @foreach($products as $product)
         <div class="col-md-4">
             <x-product-card>
