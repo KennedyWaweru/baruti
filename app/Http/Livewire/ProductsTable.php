@@ -13,7 +13,7 @@ class ProductsTable extends Component
     public array $quantity;
     public array $stock;
     public $current_page = 1;
-    public $products_on_page = 6;
+    public $products_on_page = 9;
     public $has_more_products = true;
     
     //public $listeners = ['moreProducts'];
@@ -68,4 +68,6 @@ class ProductsTable extends Component
 
         $this->products = $this->products -> merge($new_products);
     }
+
+    /* Implement sorting feature */
 }
