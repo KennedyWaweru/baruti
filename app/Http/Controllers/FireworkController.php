@@ -258,7 +258,7 @@ class FireworkController extends Controller
         }
        
         if ($firework->save()){
-            return redirect('/fireworks')->with('success','Product updated successful');
+            return redirect()->route('fireworks.show',$firework)->with('success','Product updated successful');
         }else{
             return redirect()->back()->with('error','Could not update the product into DB')->withInput();
         }
