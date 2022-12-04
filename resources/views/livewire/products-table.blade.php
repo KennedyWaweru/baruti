@@ -1,5 +1,6 @@
 <section class="featured-products">
     <div class="row">
+        {{--
         <div class="col-md-8">
             <h2 class="text-center text-white">Featured Products</h2>
         </div>
@@ -11,6 +12,8 @@
                 </span>
             </a>
         </div>
+        --}}
+        <h2 class="text-center text-primary fs-2"></h2>
         
         @foreach($products as $product)
         <div class="col-md-4">
