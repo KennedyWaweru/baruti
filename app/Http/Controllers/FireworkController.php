@@ -120,7 +120,10 @@ class FireworkController extends Controller
             foreach($request->file('images') as $_img){
 
                 // s3 bucket storage
-                $path = 'uploads/'.$folder_name.'/'.time().'_'.$folder_name.'.'.$_img->getClientOriginalExtension();
+                $random_salt = Str::random(6);
+                $path = 'uploads/'.$folder_name.'/'.time().$random_salt.'_'.$folder_name.'.'.$_img->getClientOriginalExtension();
+
+                //$path = 'uploads/'.$folder_name.'/'.time().'_'.$folder_name.'.'.$_img->getClientOriginalExtension();
                 $image = Image::make($_img->getRealPath())->resize(300,300)->stream();
                 Storage::disk('s3')->put($path, $image);
                 $image_names[] = $path;
@@ -132,7 +135,7 @@ class FireworkController extends Controller
         }
        
         if ($firework->save()){
-            return redirect('/fireworks')->with('success','Upload was successful');
+            return redirect()->route('fireworks.show',$firework)->with('success','Upload was successful');
         }else{
             return redirect()->back()->with('error','Could not insert into DB')->withInput();
         }
@@ -244,7 +247,8 @@ class FireworkController extends Controller
             }
             foreach($request->file('images') as $_img){
                 // s3 bucket storage
-                $path = 'uploads/'.$folder_name.'/'.time().'_'.$folder_name.'-'.pathinfo($_img->getClientOriginalName(), PATHINFO_FILENAME).'.'.$_img->getClientOriginalExtension();
+                $random_salt = Str::random(6);
+                $path = 'uploads/'.$folder_name.'/'.time().$random_salt.'_'.$folder_name.'.'.$_img->getClientOriginalExtension();
                 $image = Image::make($_img->getRealPath())->resize(300,300)->stream();
                 Storage::disk('s3')->put($path, $image);
 
