@@ -7,7 +7,7 @@
             <a href="#" class="float-right fs-6 bg-info">
                 Sort by price
                 <span id="productSort">
-                    <i class="fa-solid fa-sort"></i>
+                    <i class="fas fa-solid fa-sort"></i>
                 </span>
             </a>
         </div>
