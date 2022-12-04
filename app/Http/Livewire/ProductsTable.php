@@ -19,7 +19,7 @@ class ProductsTable extends Component
     //public $listeners = ['moreProducts'];
     public function mount(){
         //$this->products = Firework::all();
-        $this->products = Firework::orderBy('price','DESC')->forPage($this->current_page,$this->products_on_page)->get();
+        $this->products = Firework::orderByRaw('price::int')->forPage($this->current_page,$this->products_on_page)->get();
         //dd($this->products);
         
         foreach($this->products as $product){
