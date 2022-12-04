@@ -238,15 +238,13 @@ class FireworkController extends Controller
        
         if($request->hasFile('images')){
 
-            dd($request->file('images'));
-
             // Delete current files in s3 bucket
             foreach(json_decode($firework->images) as $img_file){
                 Storage::disk('s3')->delete($img_file);
             }
             foreach($request->file('images') as $_img){
                 // s3 bucket storage
-                $path = 'uploads/'.$folder_name.'/'.time().'_'.$folder_name.'.'.$_img->getClientOriginalExtension();
+                $path = 'uploads/'.$folder_name.'/'.time().'_'.$folder_name.'-'.pathinfo($_img->getClientOriginalName(), PATHINFO_FILENAME).'.'.$_img->getClientOriginalExtension();
                 $image = Image::make($_img->getRealPath())->resize(300,300)->stream();
                 Storage::disk('s3')->put($path, $image);
 
