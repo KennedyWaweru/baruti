@@ -15,6 +15,7 @@ class ProductsTable extends Component
     public $current_page = 1;
     public $products_on_page = 9;
     public $has_more_products = true;
+    private $sortPrice = false;
     
     //public $listeners = ['moreProducts'];
     public function mount(){
@@ -22,7 +23,13 @@ class ProductsTable extends Component
         //$this->products = Firework::orderByRaw('CONVERT(price, SIGNED)')->forPage($this->current_page,$this->products_on_page)->get();
         $this->products = Firework::forPage($this->current_page, $this->products_on_page)->get();
         //dd($this->products);
-        
+        /* Check if sorting is required */
+        if($this->sortPrice){
+            $this->products = Firework::orderByRaw('CONVERT(price, SIGNED)')->forPage($this->current_page,$this->products_on_page)->get();
+        }else{
+            $this->products = Firework::forPage($this->current_page, $this->products_on_page)->get();
+        }
+
         foreach($this->products as $product){
             $this->quantity[$product->id] = 1;
             $this->stock[$product->id] = $product->stock;
@@ -55,8 +62,14 @@ class ProductsTable extends Component
 
     public function moreProducts(){
         $this->current_page += 1;
-        $new_products = Firework::forPage($this->current_page,$this->products_on_page)->get();
 
+        // check if sort by price is required
+        if($this->sortPrice){
+            $new_products = Firework::orderByRaw('CONVERT(price, SIGNED)')->forPage($this->current_page,$this->products_on_page)->get();
+        }else{
+            $new_products = Firework::forPage($this->current_page,$this->products_on_page)->get();
+        }
+    
         // check length of new_products
         // if length is 0 then more_products button should be disabled
         if(! $new_products->count()){
@@ -71,4 +84,7 @@ class ProductsTable extends Component
     }
 
     /* Implement sorting feature */
+    public function sortOnPrice(){
+        $this->sortPrice = True;
+    }
 }

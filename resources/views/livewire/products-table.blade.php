@@ -4,7 +4,7 @@
             <h2 class="text-center text-white">Featured Products</h2>
         </div>
         <div class="col-md-4">
-            <a href="#" role="button" class="btn float-left fs-5 text-info">
+            <a wire:click="sortOnPrice" role="button" class="btn float-left fs-5 text-info">
                 Sort by price
                 <span id="productSort">
                     <i class="fas fa-solid fa-sort text-blue"></i>
