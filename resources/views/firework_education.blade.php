@@ -26,6 +26,7 @@
           <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
             <div class="accordion-body fs-4">
               <h3 class="text-center fs-3 text-info">How to ignite a firework rocket</h3>
+              {{-- Include images of bottle rockets --}}
               <img class="img-fluid d-block mx-auto" src="https://d34dnz415a0ab2.cloudfront.net/lighting-rocket.jpg" alt="How to light a Rocket" width="400" height="400">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item"><strong>Make sure you have a clear, open space to light.</strong></li>

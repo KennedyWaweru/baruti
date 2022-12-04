@@ -76,6 +76,8 @@
                     
                 <hr class="my-2 text-success">
 
+                {{--
+                    
                 <div class="row">
                     <div class="col-md-6">
                         <a href="{{ url('authorized/google') }}">
@@ -93,6 +95,8 @@
                         By continuing, you agree to Baruti's <a href=" {{url('privacy_policy')}} ">privacy policy</a>
                     </small>
                 </div>
+
+                --}}
 
                 </div>
 
