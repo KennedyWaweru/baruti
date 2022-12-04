@@ -85,6 +85,7 @@ class ProductsTable extends Component
 
     /* Implement sorting feature */
     public function sortOnPrice(){
+        unset($this->products);
         $this->sortPrice = True;
         $this->mount();
     }
