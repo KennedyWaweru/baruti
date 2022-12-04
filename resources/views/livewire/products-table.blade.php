@@ -2,6 +2,7 @@
     <div class="row">
         <h2 class="text-center text-white">Featured Products</h2>
         <a href="#" class="float-right fs-2 bg-info">
+            Sort by price
             <span id="productSort">
                 <i class="fa-solid fa-bars-sort"></i>
             </span>
