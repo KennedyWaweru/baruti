@@ -4,7 +4,7 @@
             <h2 class="text-center text-white">Featured Products</h2>
         </div>
         <div class="col-md-4">
-            <a href="#" class="float-right fs-6 bg-info">
+            <a href="#" role="button" class="float-right fs-5 bg-info">
                 Sort by price
                 <span id="productSort">
                     <i class="fas fa-solid fa-sort"></i>
