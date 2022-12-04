@@ -1,6 +1,11 @@
 <section class="featured-products">
     <div class="row">
         <h2 class="text-center text-white">Featured Products</h2>
+        <a href="#" class="float-right fs-2">
+            <span id="productSort">
+                <i class="fa-solid fa-bars-sort"></i>
+            </span>
+        </a>
         @foreach($products as $product)
         <div class="col-md-4">
             <x-product-card>
