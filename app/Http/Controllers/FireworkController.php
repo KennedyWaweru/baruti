@@ -238,6 +238,8 @@ class FireworkController extends Controller
        
         if($request->hasFile('images')){
 
+            dd($request->file('images'));
+
             // Delete current files in s3 bucket
             foreach(json_decode($firework->images) as $img_file){
                 Storage::disk('s3')->delete($img_file);
@@ -250,7 +252,7 @@ class FireworkController extends Controller
 
                 $image_names[] = $path;
             }
-            #var_dump(json_encode($image_names));
+            
             $firework->images = json_encode($image_names);
 
             // check if name of the product changed so as to move the directory
