@@ -129,20 +129,28 @@
            					@endisset
            				</div>
            			</div>
+					
            			<div class="col-md-4 col-sm-12">
-           				@if($order->delivery_status)
 
-           				@else
-           				{!!Form::open(['action' => ['OrderController@complete',$order], 'method'=>'POST'])!!}
-           				<div class="form-check form-switch">
-           					<input class="form-check-input float-end" name="delivery_status" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-           					<label class="form-check-label" for="flexSwitchCheckDefault">Mark as Delivered:</label>
-           				</div>
-           				<div class="form-group my-2">
-           					<button class="form-control-sm btn btn-submit btn-outline-primary float-end">Confirm</button>
-           				</div>
-           				{!!Form::close()!!}
-           				@endif
+						{{-- Check if order has been paid for--}}
+						@if($order->payment_status) bg-success @else bg-info @endif"
+							@if($order->delivery_status)
+
+							@else
+							{!!Form::open(['action' => ['OrderController@complete',$order], 'method'=>'POST'])!!}
+							<div class="form-check form-switch">
+								<input class="form-check-input float-end" name="delivery_status" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+								<label class="form-check-label" for="flexSwitchCheckDefault">Mark as Delivered:</label>
+							</div>
+							<div class="form-group my-2">
+								<button class="form-control-sm btn btn-submit btn-outline-primary float-end">Confirm</button>
+							</div>
+							{!!Form::close()!!}
+							@endif
+						@else 
+						<div class="p-2 m-2 bg-danger text-center text-white">Payment Not Complete. Please Go back and Complete Payment via M-Pesa Online</div>
+						<a href="{{route('order')}}" role="button" class="btn btn-outline-success">Complete Payment</a>
+						@endif
            			</div>
            		</div>
            		
