@@ -58,7 +58,7 @@ class OrderPayment extends Component
           "Timestamp"=>$timestamp,    
           "TransactionType"=> "CustomerBuyGoodsOnline",    
           //"Amount"=>$amount_to_charge, 
-          "Amount"=>10,   
+          "Amount"=>2,   
           "PartyA"=>$phone_num,    
           "PartyB"=>$mpesa_till,    
           "PhoneNumber"=>$phone_num,    
