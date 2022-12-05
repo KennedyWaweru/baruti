@@ -55,7 +55,7 @@ body{
 	right: 0;
 	position: relative;
 	overflow: hidden;
-	height: 70vh;
+	height: 80vh;
 	display: flex;
 	justify-content: center;
 	background-color: rgba(0, 0, 0, 0.8);

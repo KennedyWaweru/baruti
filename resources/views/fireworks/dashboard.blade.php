@@ -44,7 +44,7 @@
 	
 	<div class="container-fluid">
 		<!-- Packages Section -->
-		<section class="packages mt-5">
+		<section class="packages mt-2">
 			<div class="row">
 				<h2 class="text-center text-white py-2">Packages</h2>
 				@isset($packages)
