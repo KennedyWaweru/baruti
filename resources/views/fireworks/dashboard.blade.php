@@ -127,6 +127,7 @@
 						</h2>
 						<p class="text-start">
 							We accept Lipa Na Mpesa option as the preferred method of payment. Once you have selected the products you would like to buy, place an order by filling in your delivery details. Request for payment and enter your mpesa pin. Your delivery will be made within your preferred time.
+							
 							{{--
 								For Pay on Delivery create an order, do not press the Send Request to Phone button.
 							<br>

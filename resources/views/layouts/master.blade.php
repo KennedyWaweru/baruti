@@ -7,7 +7,7 @@
   <link rel="icon" type="image/x-icon" href="{{asset('images/rocket-logo.svg')}}">
 
 	@yield('meta')
-	<title>KenWebshop</title>
+	<title>KenWebshop @yield('title')</title>
 	<!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->

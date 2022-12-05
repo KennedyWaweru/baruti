@@ -1,5 +1,13 @@
 @extends('layouts.master')
 
+@section('meta')
+	<meta name="description" content="Buy Fireworks online in Kenya Nairobi. {{Str::limit($firework->description, 50)}}">
+	<meta name="keywords" content="Fireworks Kenya, fireworks near me, fireworks in nairobi {{$firework->name}}">
+@endsection 
+
+@section('title')
+	{{$firework->name}}
+@endsection
 @section('styles')
 	<style>
 		.color-effect{
