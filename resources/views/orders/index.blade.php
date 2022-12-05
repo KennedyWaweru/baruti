@@ -115,15 +115,21 @@
 						</div>
 							
            				@else
-           				{!!Form::open(['action' => ['OrderController@complete',$order], 'method'=>'POST'])!!}
-           				<div class="form-check form-switch">
-           					<input class="form-check-input float-end" name="delivery_status" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-           					<label class="form-check-label" for="flexSwitchCheckDefault">Mark as Delivered:</label>
-           				</div>
-           				<div class="form-group my-2">
-           					<button class="form-control-sm btn btn-submit btn-outline-primary float-end">Confirm</button>
-           				</div>
-           				{!!Form::close()!!}
+							@if($order->payment_status)
+								{!!Form::open(['action' => ['OrderController@complete',$order], 'method'=>'POST'])!!}
+								<div class="form-check form-switch">
+									<input class="form-check-input float-end" name="delivery_status" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+									<label class="form-check-label" for="flexSwitchCheckDefault">Mark as Delivered:</label>
+								</div>
+								<div class="form-group my-2">
+									<button class="form-control-sm btn btn-submit btn-outline-primary float-end">Confirm</button>
+								</div>
+								{!!Form::close()!!}
+							@else
+								<div class="m-2 p-2 bg-alert text-center fs-4">
+									NOT PAID
+								</div>
+							@endif
            				@endif
            			</div>
            		</div>

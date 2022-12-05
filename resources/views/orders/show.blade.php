@@ -133,7 +133,7 @@
            			<div class="col-md-4 col-sm-12">
 
 						{{-- Check if order has been paid for--}}
-						@if($order->payment_status) bg-success @else bg-info @endif"
+						@if($order->payment_status) 
 							@if($order->delivery_status)
 								<div class="m-2 p-2 bg-info text-white text-center">
 									Delivery Complete
