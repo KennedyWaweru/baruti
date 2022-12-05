@@ -126,7 +126,7 @@
 								</div>
 								{!!Form::close()!!}
 							@else
-								<div class="m-2 p-2 bg-alert text-center fs-4">
+								<div class="alert alert-danger text-center text-white fs-4">
 									NOT PAID
 								</div>
 							@endif

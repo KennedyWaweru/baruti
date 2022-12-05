@@ -145,8 +145,8 @@
 								</div>
 							@endif
 						@else 
-						<div class="p-2 m-2 bg-danger text-center text-white">Payment Not Complete. Please Go back and Complete Payment via M-Pesa Online</div>
-						<a href="{{route('order')}}" role="button" class="btn btn-outline-success">Complete Payment</a>
+							<div class="p-2 m-2 alert alert-danger text-center text-white">Payment Not Complete. Please Go back and Complete Payment via M-Pesa Online</div>
+							<a href="{{route('order')}}" role="button" class="btn btn-outline-success">Complete Payment</a>
 						@endif
            			</div>
            		</div>
