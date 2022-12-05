@@ -110,7 +110,10 @@
            			</div>
            			<div class="col-md-4 col-sm-12">
            				@if($order->delivery_status)
-
+						<div class="m-2 p-2 bg-info text-white text-center">
+							Delivery Complete
+						</div>
+							
            				@else
            				{!!Form::open(['action' => ['OrderController@complete',$order], 'method'=>'POST'])!!}
            				<div class="form-check form-switch">

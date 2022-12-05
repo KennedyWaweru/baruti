@@ -135,17 +135,14 @@
 						{{-- Check if order has been paid for--}}
 						@if($order->payment_status) bg-success @else bg-info @endif"
 							@if($order->delivery_status)
-
+								<div class="m-2 p-2 bg-info text-white text-center">
+									Delivery Complete
+								</div>
+								
 							@else
-							{!!Form::open(['action' => ['OrderController@complete',$order], 'method'=>'POST'])!!}
-							<div class="form-check form-switch">
-								<input class="form-check-input float-end" name="delivery_status" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-								<label class="form-check-label" for="flexSwitchCheckDefault">Mark as Delivered:</label>
-							</div>
-							<div class="form-group my-2">
-								<button class="form-control-sm btn btn-submit btn-outline-primary float-end">Confirm</button>
-							</div>
-							{!!Form::close()!!}
+								<div class="m-2 p-2 bg-alert text-white text-center">
+									Delivery Pending
+								</div>
 							@endif
 						@else 
 						<div class="p-2 m-2 bg-danger text-center text-white">Payment Not Complete. Please Go back and Complete Payment via M-Pesa Online</div>
