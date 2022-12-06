@@ -72,6 +72,11 @@ class ProductsTable extends Component
 
         $this->products = $this->products -> merge($new_products);
 
+        if($this->num_button_clicked == 1){
+            // write an empty line on Log file to visually separate users
+            Log::info("\n");
+        }
+
         // log the number of times the user has clicked the button
         Log::info('User clicked to see more products',['n:'=>$this->num_button_clicked]);
         // increment number of times More Products button has clicked by 1
