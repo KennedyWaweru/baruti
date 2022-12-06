@@ -16,7 +16,8 @@ class ProductsTable extends Component
     public $current_page = 1;
     public $products_on_page = 9;
     public $has_more_products = true;
-    private $num_button_clicked = 0; // this variable will track number of times a user clicks the More Products button
+    private $num_button_clicked = 1; // this variable will track number of times a user clicks the More Products button
+    // initial value is 1 since log will only happen once button is clicked
     
     //public $listeners = ['moreProducts'];
     public function mount(){
@@ -74,7 +75,7 @@ class ProductsTable extends Component
         // log the number of times the user has clicked the button
         $this->num_button_clicked += 1;
         // implement basic logging here
-        Log::info('User clicked to see more products:',['number_of_times'=>$this->num_button_clicked]);
+        Log::info('User clicked to see more products',['n:'=>$this->num_button_clicked]);
     }
 
     /* Implement sorting feature */
