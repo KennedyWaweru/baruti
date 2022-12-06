@@ -7,7 +7,9 @@
   <link rel="icon" type="image/x-icon" href="{{asset('images/rocket-logo.svg')}}">
 
 	@yield('meta')
-	<title>KenWebshop @yield('title')</title>
+  <meta name="description" content="Buy Fireworks online in Kenya Nairobi.">
+  <meta name="keywords" content="baruti, fireworks, fireworks kenya, fireworks nairobi, new year nairobi, happy new year nairobi, best fireworks kenya">
+	<title>KenWebshop |@yield('title')</title>
 	<!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
