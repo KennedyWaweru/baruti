@@ -37,7 +37,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['custom_error','custom_info'],
             'ignore_exceptions' => false,
         ],
 
@@ -89,6 +89,19 @@ return [
         'errorlog' => [
             'driver' => 'errorlog',
             'level' => 'debug',
+        ],
+
+        'custom_error' => [
+            'driver' => 'single',
+            'level' => 'error',
+            'path' => storage_path('logs/custom_error.log'),
+            'bubble' => false
+        ],
+
+        'custom_info' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/custom_info.log'),
+            'level' => 'info'
         ],
 
         'null' => [
