@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Firework;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class ProductsTable extends Component
 {
@@ -15,6 +16,7 @@ class ProductsTable extends Component
     public $current_page = 1;
     public $products_on_page = 9;
     public $has_more_products = true;
+    private $num_button_clicked = 0; // this variable will track number of times a user clicks the More Products button
     
     //public $listeners = ['moreProducts'];
     public function mount(){
@@ -68,6 +70,11 @@ class ProductsTable extends Component
         }
 
         $this->products = $this->products -> merge($new_products);
+
+        // log the number of times the user has clicked the button
+        $this->num_button_clicked += 1;
+        // implement basic logging here
+        Log::info('User clicked to see more products:',['number_of_times'=>$this->num_button_clicked]);
     }
 
     /* Implement sorting feature */
