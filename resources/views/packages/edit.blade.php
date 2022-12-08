@@ -9,7 +9,7 @@
                     <div class="container-fluid py-5">
                         <h2 class="display-5 fw-bold text-center">Update Package {{$package->name}}</h2>
                         
-                        {!! Form::open(['action' => 'PackageController@update', 'method'=>'PUT', 'enctype'=>'multipart/form-data']) !!}
+                        {!! Form::open(['action' => ['PackageController@update', $package], 'method'=>'PUT', 'enctype'=>'multipart/form-data']) !!}
         
                         <div class="form-group mb-3">
                             {{Form::label('name', 'Package Name',['class'=>'form-label'])}}
