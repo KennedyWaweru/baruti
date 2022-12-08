@@ -32,7 +32,7 @@ Route::get('fireworks/checkSlug', 'FireworkController@checkSlug')->name('firewor
 Route::resource('/fireworks', FireworkController::class);
 
 Route::get('packages/checkSlug','PackageController@checkSlug')->name('packages.checkSlug');
-Route::resource('/packages',PackageController::class);
+Route::resource('packages',PackageController::class);
 
 
 Route::get('order','OrderController@create')->name('order');
