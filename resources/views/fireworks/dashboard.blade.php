@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+	Fireworks
+@endsection
+
 @section('content')
 	<div class="page-header text-center">
 		<div id="heading-text">

@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+  Fireworks Education
+@endsection
+
 @section('content')
 <h1 class="text-center text-success fs-1">Firework Education Page</h1>
 {{-- Use bootstrap accordions--}}
