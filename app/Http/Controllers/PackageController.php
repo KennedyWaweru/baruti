@@ -131,6 +131,7 @@ class PackageController extends Controller
     public function edit(Package $package)
     {
         //
+        dd($package);
         return view('packages.edit',['package'=>$package]);
     }
 
