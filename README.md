@@ -1,1 +1,1 @@
-_baruti.co.ke_ is a web application for a webshop that specializes in sales and distribution of fireworks and pyros.
+This is a web application for a webshop that powered by Laravel and Livewire.
